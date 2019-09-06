@@ -1,61 +1,61 @@
 import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
 
+import { primary, secondary, transparentBackground } from '../styleguide/colors'
+
+const StyledNav = styled.nav`
+  text-align: center;
+  background-color: ${transparentBackground};
+  padding: 20px;
+  position: fixed;
+  width: 100vw;
+`
+
+const StyledUl = styled.ul`
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+`
+
+const StyledLi = styled.li`
+  display: flex;
+  &:not(:first-of-type){
+    margin-left: 2em;
+  }
+`
+
+const StyledA = styled.a`
+  color: ${primary};
+  text-decoration: none;
+  font-size: 1em;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    color: ${secondary};
+  }
+`
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
+  <StyledNav>
+    <StyledUl>
+      <StyledLi>
         <Link href='#sobre'>
-          <a>Sobre</a>
+          <StyledA>Sobre</StyledA>
         </Link>
-      </li>
-      <li>
+      </StyledLi>
+      <StyledLi>
         <Link href='#projetos'>
-          <a>Projetos</a>
+          <StyledA>Projetos</StyledA>
         </Link>
-      </li>
-      <li>
+      </StyledLi>
+      <StyledLi>
         <Link href='#contato'>
-          <a>Contato</a>
+          <StyledA>Contato</StyledA>
         </Link>
-      </li>
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-        background-color: black;
-        padding: 20px;
-        
-      }
-      ul {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 2em;
-      }
-      a:focus, a:active {
-        border: none;
-      }
-      a: focus, a:active, a:hover {
-        color: red;
-      }
-    `}</style>
-  </nav>
+      </StyledLi>
+    </StyledUl>
+  </StyledNav>
 )
 
 export default Nav
