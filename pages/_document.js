@@ -10,18 +10,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <style>
-          {`
-            @font-face {
-              font-family: 'Lato';
-              src: url('/static/lato.woff2');
-            }
+          <title>Thaís portfólio</title>
+          <style>
+            {`
+              @font-face {
+                font-family: 'Lato';
+                src: url('/static/lato.woff2');
+              }
 
-            body {
-              font-family: 'Lato', sans-serif;
-            }
-          `}
-        </style>
+              body {
+                font-family: 'Lato', sans-serif;
+              }
+            `}
+          </style>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
