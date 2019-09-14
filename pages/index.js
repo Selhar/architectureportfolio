@@ -4,10 +4,8 @@ import styled from 'styled-components';
 import Nav from '../components/nav'
 import About from '../components/about'
 import Reset from '../styleguide/reset'
-
+import Projects from "../components/projects"
 const StyledSection = styled.section`
-  width: 100vw;
-  height: 100vh;
 `
 
 const Home = () => (
@@ -18,7 +16,7 @@ const Home = () => (
       <About/>
     </StyledSection>
     <StyledSection id="projetos">
-      <h1>Projetos</h1> 
+      <Projects/>
     </StyledSection>
     <StyledSection id="contato">
       CONTATO PLACEHOLDER
