@@ -5,6 +5,9 @@ import Nav from '../components/nav'
 import About from '../components/about'
 import Reset from '../styleguide/reset'
 import Projects from "../components/projects"
+import Contact from "../components/contact"
+import Social from "../components/social"
+
 const StyledSection = styled.section`
 `
 
@@ -19,10 +22,10 @@ const Home = () => (
       <Projects/>
     </StyledSection>
     <StyledSection id="contato">
-      CONTATO PLACEHOLDER
+      <Contact/>
     </StyledSection>
     <StyledSection>
-      info footer social media
+      <Social/>
     </StyledSection>
   </div>
 )
