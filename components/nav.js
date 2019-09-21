@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import styled from 'styled-components'
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import { primary, secondary, hardBackground } from '../styleguide/colors'
 
@@ -85,17 +85,38 @@ class Nav extends React.Component {
           <StyledP>teste</StyledP>
           <StyledUl>
             <StyledLi>
-              <Link href='#sobre'>
+              <Link           
+                activeClass="active"
+                to="section1"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration= {500}
+                to='sobre'>
                 <StyledA>Sobre</StyledA>
               </Link>
             </StyledLi>
             <StyledLi>
-              <Link href='#projetos'>
+              <Link           
+                activeClass="active"
+                to="section1"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration= {500}
+                to='projetos'>
                 <StyledA>Projetos</StyledA>
               </Link>
             </StyledLi>
             <StyledLi>
-              <Link href='#contato'>
+              <Link           
+                activeClass="active"
+                to="section1"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration= {500}
+                to='contato'>
                 <StyledA>Contato</StyledA>
               </Link>
             </StyledLi>
