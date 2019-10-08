@@ -4,7 +4,6 @@ export default createGlobalStyle`
   body{
     max-width: 1600px;
     margin: 0 auto;
-    background-color: #fff317;
     & * {
       margin: 0;
       border: 0;
