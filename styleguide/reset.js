@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   body{
-    font-family: 'Lato', sans-serif;
     max-width: 1600px;
     margin: 0 auto;
     background-color: #fff317;
