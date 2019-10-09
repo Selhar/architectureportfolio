@@ -1,7 +1,8 @@
 import React from 'react';
+import Social from './'
 
 export default {
   title: 'Social',
 };
 
-export const Basic = () => <h1>oi</h1>
+export const Basic = () => <Social />

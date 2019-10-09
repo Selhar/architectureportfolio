@@ -2,8 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledImg = styled.img`
-  width: 40px;
+  width: 30px;
   height: auto;
+  &:not(:first-of-type) {
+    margin-left: 5px;
+  }
 `
 
 const StyledDiv = styled.div`
@@ -14,9 +17,9 @@ const StyledDiv = styled.div`
 
 export default () => (
   <StyledDiv>
-    <StyledImg src="/static/facebook-icon.png"/>
-    <StyledImg src="/static/instagram-item.png"/>
-    <StyledImg src="/static/mail-icon.png"/>
+    <StyledImg src="https://via.placeholder.com/30x30"/>
+    <StyledImg src="https://via.placeholder.com/30x30"/>
+    <StyledImg src="https://via.placeholder.com/30x30"/>
   </StyledDiv>
 )
 
