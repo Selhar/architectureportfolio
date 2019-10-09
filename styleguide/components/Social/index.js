@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 const StyledImg = styled.img`
   width: 30px;
   height: auto;
@@ -9,17 +14,10 @@ const StyledImg = styled.img`
   }
 `
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-`
-
 export default () => (
   <StyledDiv>
-    <StyledImg src="https://via.placeholder.com/30x30"/>
-    <StyledImg src="https://via.placeholder.com/30x30"/>
-    <StyledImg src="https://via.placeholder.com/30x30"/>
+    <StyledImg src='/static/whatsapp-logo-variant.svg' />
+    <StyledImg src='/static/instagram.svg' />
   </StyledDiv>
 )
 

@@ -7,6 +7,7 @@ const StyledDiv = styled.div`
   max-height: 720px;
   width: 100%;
   height: 100%;
+  margin-top: 100px;
 `
 
 const StyledImg = styled.img`
@@ -17,7 +18,7 @@ const StyledImg = styled.img`
 
 const CenterMessage = styled.div`
   position: absolute;
-  top: ${props => props.center ? '50%' : '98%'};
+  top: ${props => props.center ? '50%' : '104%'};
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
