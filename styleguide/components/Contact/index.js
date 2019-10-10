@@ -1,69 +1,61 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import { transparentBackground, primary } from '../styleguide/colors'
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 400px;
-  background-color: ${transparentBackground};
+const StyledDiv = styled.div`
+  width: 500px;
+  background-color: yellow;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 20px;
+  margin: 0 auto;
 `
 
-const StyledLabel = styled.label`
+const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  color: ${primary};
+`
+const StyledField = styled(Field)`
+  margin-top: 20px;
+  border-bottom: 1px solid red;
 `
 
-export default class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      alias: '',
-      email: '',
-      text: ''
+const Contact = () => (
+  <StyledDiv>
+    <Formik
+      initialValues={{ email: '', name: '', message: '' }}
+      validate={values => {
+        let errors = {};
+        if (!values.email) {
+          errors.email = 'Campo obrigatório';
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'E-mail inválido.';
+        }
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <StyledForm>
+          <StyledField type="text" name="name" placeholder="Nome"/>
+          <ErrorMessage name="name" component="div" />
+          <StyledField type="email" name="email" label="E-mail" placeholder="E-mail" />
+          <ErrorMessage name="email" component="div" />
+          <StyledField type="textarea" component="textarea" rows="4" cols="50" name="message" placeholder="Mensagem" />
+          <ErrorMessage name="message" component="div" />
+          <button type="submit" disabled={isSubmitting}>
+            Submit
+          </button>
+        </StyledForm>
+      )}
+    </Formik>
+  </StyledDiv>
+);
 
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <StyledForm onSubmit={this.handleSubmit}>
-        <StyledLabel>
-          Nome:
-          <input type="text" value={this.state.name} onChange={this.handleChange} />
-        </StyledLabel>
-        <StyledLabel>
-          Apelido(opcional):
-          <input type="text" value={this.state.alias} onChange={this.handleChange} />
-        </StyledLabel>
-        <StyledLabel>
-          E-mail:
-          <input type="text" value={this.state.email} onChange={this.handleChange} />
-        </StyledLabel>
-        <StyledLabel>
-          Mensagem:
-          <input type="text" value={this.state.text} onChange={this.handleChange} />
-        </StyledLabel>
-        <input type="submit" value="Submit" />
-      </StyledForm>
-    );
-  }
-}
+export default Contact;
