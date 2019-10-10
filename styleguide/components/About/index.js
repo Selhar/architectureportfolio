@@ -1,29 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
-import { transparentBackground, primary } from '../styleguide/colors'
-const StyledImg = styled.img`
-  max-height: 100vh;
-  max-width: 100vw;
-  width: 100%;
-  height: auto;
-  z-index: -1;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* TEMPORARY */
+  width: 1200px;
+  margin: 0 auto;
 `
 
-const StyledP = styled.p`
-  position: absolute;
-  top: 60%;  
-  transform: translate(0, -50%); 
-  color: ${primary};
-  padding: 20px;
-  background-color: ${transparentBackground};
-  border-radius: 4px;
-  max-width: 400px;
+const TextWrapper = styled.div`
+  max-width: 500px;
+`
+
+const StyledH1 = styled.h1`
+  text-align: left;
+`
+
+const Box = styled.div`
+  background-color: red;
+  width: 500px;
+  height: 400px;
 `
 
 export default () => (
-  <div>
-    <StyledP>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</StyledP>
-    <StyledImg src="/static/splash.jpg"></StyledImg>
-  </div>
+  <React.Fragment>
+    <Wrapper>
+      <TextWrapper>
+        <StyledH1>O estúdio</StyledH1>
+        <p>dpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok as</p>
+      </TextWrapper>
+      <Box />
+    </Wrapper>
+  </React.Fragment>
 )
-
