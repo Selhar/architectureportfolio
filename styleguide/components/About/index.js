@@ -4,9 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  /* TEMPORARY */
-  width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
 `
 
 const TextWrapper = styled.div`

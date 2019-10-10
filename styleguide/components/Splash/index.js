@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const StyledDiv = styled.div`
   position: relative;
   max-width: 1600px;
-  max-height: 720px;
   width: 100%;
   height: 100%;
   margin-top: 100px;
@@ -18,7 +17,7 @@ const StyledImg = styled.img`
 
 const CenterMessage = styled.div`
   position: absolute;
-  top: ${props => props.center ? '50%' : '104%'};
+  top: ${props => props.center ? '50%' : '99%'};
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
