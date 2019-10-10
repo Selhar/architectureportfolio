@@ -38,7 +38,7 @@ export default () => (
     <img src="https://via.placeholder.com/75x75" />
     <StyledUl>
       <StyledLi>
-        Menu1
+        <a href="#portfolio">Portfolio</a>
       </StyledLi>
       <StyledLi>
         Menu2

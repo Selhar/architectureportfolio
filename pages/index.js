@@ -6,6 +6,8 @@ import GlobalStyle from '../styleguide/reset'
 import Menu from '../styleguide/components/Menu'
 import Splash from '../styleguide/components/Splash'
 import About from '../styleguide/components/About'
+import Projects from '../styleguide/components/Projects'
+import Contact from '../styleguide/components//Contact'
 
 const Wrapper = styled.div`
   max-width: 1600px;
@@ -30,6 +32,10 @@ const Home = () => (
       <StyledSplash />
       <Spacing />
       <About />
+      <Spacing />
+      <Contact />
+      <Spacing />
+      <Projects />
     </Wrapper>
   </React.Fragment>
 )

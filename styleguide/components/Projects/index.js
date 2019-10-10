@@ -1,13 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-
-
 import Gallery from 'react-grid-gallery';
 
-const StyledImg = styled.img`
-  width: 100%;
-  height: auto;
-`
 const Images = [{
   src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
   thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
@@ -90,7 +83,7 @@ const Images = [{
 }]
 
 export default () => (
-  <div>
+  <div id='portfolio'>
     <Gallery images={Images} enableImageSelection={false}/>
   </div>
 )
