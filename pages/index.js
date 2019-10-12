@@ -7,7 +7,8 @@ import Menu from '../styleguide/components/Menu'
 import Splash from '../styleguide/components/Splash'
 import About from '../styleguide/components/About'
 import Projects from '../styleguide/components/Projects'
-import Contact from '../styleguide/components//Contact'
+import Contact from '../styleguide/components/Contact'
+import ProfessionalContact from '../styleguide/components/ProfessionalContact'
 
 const Wrapper = styled.div`
   max-width: 1600px;
@@ -36,6 +37,8 @@ const Home = () => (
       <Contact />
       <Spacing />
       <Projects />
+      <Spacing />
+      <ProfessionalContact />
     </Wrapper>
   </React.Fragment>
 )

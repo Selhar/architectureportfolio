@@ -28,14 +28,22 @@ const StyledUl = styled.ul`
 
 const StyledLi = styled.li`
   text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
   :not(:first-of-type) {
     margin-left: 20px;
   }
 `
 
+const StyledImg = styled.img`
+  width: 45px;
+  height: auto;
+`
+
 export default () => (
   <StyledDiv>
-    <img src="https://via.placeholder.com/75x75" />
+    <StyledImg src="/static/logo.svg" />
     <StyledUl>
       <StyledLi>
         <a href="#portfolio">Portfolio</a>
