@@ -17,9 +17,8 @@ export default createGlobalStyle`
   }
 
   body{
-    max-width: 1600px;
     margin: 0 auto;
-    font-family: 'Sensation Regular', sans-serif;
+    font-family: 'Geogrotesque', sans-serif;
     & * {
       margin: 0;
       border: 0;
