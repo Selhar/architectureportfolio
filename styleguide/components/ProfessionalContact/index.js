@@ -15,6 +15,22 @@ const perfis = [
   },
 ]
 
+const projectType = [
+  { 
+    id: 'illustrative',
+    label: 'Imagem ilustrativa'
+  },{ 
+    id: 'animationmodel',
+    label: 'Modelagem de animação'
+  },{ 
+    id: 'videomodel',
+    label: 'Modelagem de vídeo'
+  },{ 
+    id: 'image',
+    label: 'Imagem 360º'
+  },
+]
+
 const StyledDiv = styled.div`
   width: 500px;
   padding: 20px;
@@ -27,7 +43,6 @@ const StyledForm = styled(Form)`
   flex-direction: column;
 `
 const StyledField = styled(Field)`
-  margin-top: 20px;
   padding: 20px;
   border-bottom: 1px solid grey;
   font-size: 20px;
@@ -46,6 +61,16 @@ const Submit = styled.button`
   margin-top: 20px;
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+`
+
+const Label = styled.label`
+  margin-left: 10px;
+`
+
 const ProfessionalContact = () => (
   <StyledDiv>
     <Title>Fale conosco</Title>
@@ -54,7 +79,8 @@ const ProfessionalContact = () => (
         email: '',
         name: '',
         message: '',
-        telefone: ''
+        telefone: '',
+        hasModel: 'false'
       }}
       validate={labels => {
         let errors = {};
@@ -82,17 +108,36 @@ const ProfessionalContact = () => (
           <ErrorMessage name="email" component="div" />
           <StyledField type="textarea" component="textarea" rows="4" cols="50" name="message" placeholder="Mensagem" />
           <ErrorMessage name="message" component="div" />
-          <StyledField
-            name="perfil"
-            component="select"
-          >
-            <option defaultlabel>Escolha seu perfil</option>
-            {perfis.map(perfil => (
-              <option key={perfil.id} label={perfil.label}>
-                {perfil.label}
-              </option>
-            ))}
-          </StyledField>
+          <Wrapper>
+            <StyledField
+              name="perfil"
+              component="select"
+            >
+              <option defaultlabel>Escolha seu perfil</option>
+              {perfis.map(perfil => (
+                <option key={perfil.id} label={perfil.label}>
+                  {perfil.label}
+                </option>
+              ))}
+            </StyledField>
+          </Wrapper>
+          <Wrapper>
+            <StyledField
+              name="projectType"
+              component="select"
+            >
+              <option defaultlabel>Escolha o tipo de projeto</option>
+              {projectType.map(type => (
+                <option key={type.id} label={type.label}>
+                  {type.label}
+                </option>
+              ))}
+            </StyledField>
+          </Wrapper>
+          <Wrapper>
+            <StyledField name="hasModel" type="checkbox" id="hasModel" />
+            <Label htmlFor="hasModel">Possui modelo 3d?</Label>
+          </Wrapper>
           <Submit type="submit" disabled={isSubmitting}>
             Enviar
           </Submit>

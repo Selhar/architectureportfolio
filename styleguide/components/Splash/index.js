@@ -33,6 +33,5 @@ export default () => (
   <StyledDiv>
     <StyledImg src='/static/portfolio/Fachada Residencial/15 grande.jpg' />
     <CenterMessage center>{mensagemSplash}</CenterMessage>
-    <CenterMessage>{email}</CenterMessage>
   </StyledDiv>
 )

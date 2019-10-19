@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import FacebookIcon from './Facebook'
+import InstagramIcon from './Instagram'
 import WhatsappIcon from './Whatsapp'
 import { orange } from '../../colors'
-import { facebook, whatsapp } from '../../data'
+import { instagram, whatsapp } from '../../data'
 
 const StyledA = styled.a`
   color: transparent;
   cursor: pointer;
+  width: auto;
 `
 
 const StyledWhatsappIcon = styled(WhatsappIcon)`
+  width: auto;
   margin-left: 10px;
 
   &:hover {
@@ -19,7 +21,8 @@ const StyledWhatsappIcon = styled(WhatsappIcon)`
   }
 `
 
-const StyledFacebookIcon = styled(FacebookIcon)`
+const StyledInstagramIcon = styled(InstagramIcon)`
+  width: auto;
   &:hover {
     fill: ${orange}
   }
@@ -32,10 +35,10 @@ const Wrapper = styled.div`
 
 export default (props) => (
   <Wrapper>
-    <StyledA href={facebook}>
-      <StyledFacebookIcon {...props} />
+    <StyledA href={instagram} target="_blank">
+      <StyledInstagramIcon {...props} />
     </StyledA>
-    <StyledA href={whatsapp}>
+    <StyledA href={whatsapp} target="_blank">
       <StyledWhatsappIcon {...props} />
     </StyledA>
   </Wrapper>
