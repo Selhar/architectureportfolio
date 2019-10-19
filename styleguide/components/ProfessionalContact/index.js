@@ -73,7 +73,7 @@ const Label = styled.label`
 
 const ProfessionalContact = () => (
   <StyledDiv>
-    <Title>Fale conosco</Title>
+    <Title>Peça um orçamento</Title>
     <Formik
       initiallabels={{
         email: '',

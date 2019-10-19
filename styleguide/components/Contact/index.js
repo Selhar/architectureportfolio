@@ -35,7 +35,7 @@ const Submit = styled.button`
 
 const Contact = () => (
   <StyledDiv>
-    <Title>Peça um orçamento</Title>
+    <Title>Fale conosco</Title>
     <Formik
       initialValues={{ email: '', name: '', message: '' }}
       validate={values => {
