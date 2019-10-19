@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {email, mensagemSplash} from '../../data'
+
 const StyledDiv = styled.div`
   position: relative;
-  max-width: 1600px;
   width: 100%;
   height: 100%;
   margin-top: 100px;
@@ -25,12 +26,13 @@ const CenterMessage = styled.div`
   text-transform: uppercase;
   font-size: 20px;
   color: white;
+  max-width: 400px;
 `
 
 export default () => (
   <StyledDiv>
-    <StyledImg src='https://static.wixstatic.com/media/66c4d0_73cc8267a0e843c2b26ef2e854794930~mv2.png/v1/fill/w_1501,h_708,al_c,q_90,usm_0.66_1.00_0.01/66c4d0_73cc8267a0e843c2b26ef2e854794930~mv2.webp' />
-    <CenterMessage center>Mensagem</CenterMessage>
-    <CenterMessage>Mensagem</CenterMessage>
+    <StyledImg src='/static/portfolio/Fachada Residencial/15 grande.jpg' />
+    <CenterMessage center>{mensagemSplash}</CenterMessage>
+    <CenterMessage>{email}</CenterMessage>
   </StyledDiv>
 )

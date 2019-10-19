@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { mensagemEstudio } from '../../data'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -9,16 +11,22 @@ const Wrapper = styled.div`
 
 const TextWrapper = styled.div`
   max-width: 500px;
+  margin-right: 70px;
 `
 
 const StyledH1 = styled.h1`
   text-align: left;
 `
 
-const Box = styled.div`
-  background-color: red;
-  width: 500px;
-  height: 400px;
+const StyledImage = styled.img`
+  height: 600px;
+  width: auto;
+`
+
+const StyledParagraph = styled.p`
+  max-width: 400px;
+  margin-top: 25px;
+  text-align: justify;
 `
 
 export default () => (
@@ -26,9 +34,9 @@ export default () => (
     <Wrapper>
       <TextWrapper>
         <StyledH1>O estúdio</StyledH1>
-        <p>dpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok asdpasokdpaso asodk aspdok aspdok aspdok as</p>
+        <StyledParagraph>{mensagemEstudio}</StyledParagraph>
       </TextWrapper>
-      <Box />
+      <StyledImage src="/static/portfolio/Interiores/20.jpg" />
     </Wrapper>
   </React.Fragment>
 )

@@ -1,90 +1,84 @@
 import React from 'react'
 import Gallery from 'react-grid-gallery';
+import styled from 'styled-components';
 
-const Images = [{
-  src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
-  thumbnailWidth: 500,
-  thumbnailHeight: 500,
-},
+const Images = [
+  {
+    src: "/static/portfolio/Fachada Residencial/14 grande.jpg",
+    thumbnail: "/static/portfolio/Fachada Residencial/14 grande.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Interiores/14.jpg",
+    thumbnail: "/static/portfolio/Interiores/14.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Interiores/16.1.jpg",
+    thumbnail: "/static/portfolio/Interiores/16.1.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Interiores/20.jpg",
+    thumbnail: "/static/portfolio/Interiores/20.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Interiores/26.jpg",
+    thumbnail: "/static/portfolio/Interiores/26.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Interiores/7.jpg",
+    thumbnail: "/static/portfolio/Interiores/7.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/lavandacoletiva/lavanderia08.jpg",
+    thumbnail: "/static/portfolio/lavandacoletiva/lavanderia08.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/lavandacoletiva/LAVANDERIA10.jpg",
+    thumbnail: "/static/portfolio/lavandacoletiva/LAVANDERIA10.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
+    thumbnail: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+  {
+    src: "/static/portfolio/Playground - Piscina/PISCINA - Àrea Gourmet.jpg",
+    thumbnail: "/static/portfolio/Playground - Piscina/PISCINA - Àrea Gourmet.jpg",
+    thumbnailWidth: 700,
+    thumbnailHeight: 700,
+  },
+]
 
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 111,
-  thumbnailHeight: 222,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 400,
-  thumbnailHeight: 202,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 500,
-  thumbnailHeight: 500,
-},
-{
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-},
+const StyledDiv = styled.div`
+  width: 900px;
+`
 
-{
-  src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-  thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212
-}]
+const StyledH1 = styled.h1`
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 35px;
+`
 
 export default () => (
-  <div id='portfolio'>
+  <StyledDiv id='portfolio'>
+    <StyledH1>Projetos</StyledH1>
     <Gallery images={Images} enableImageSelection={false}/>
-  </div>
+  </StyledDiv>
 )
 

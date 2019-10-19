@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { primary, secondary, yellow, grey } from '../../colors'
 import Social from '../Social'
 
 const StyledDiv = styled.div`
@@ -13,9 +14,9 @@ const StyledDiv = styled.div`
   width: 100%;
   z-index: 1;
   background-color: white;
-  height: 100px;
   font-size: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid ${yellow};
+  padding: 20px;
 `
 
 const StyledUl = styled.ul`
@@ -23,7 +24,6 @@ const StyledUl = styled.ul`
   list-style: none;
   justify-content: center;
   align-items: center;
-  height: 100px;
 `
 
 const StyledLi = styled.li`
@@ -36,28 +36,40 @@ const StyledLi = styled.li`
   }
 `
 
+const StyledA = styled.a`
+  color: ${grey};
+  &:hover {
+    color: ${secondary}
+  }
+`
+
 const StyledImg = styled.img`
-  width: 45px;
+  width: 250px;
   height: auto;
 `
 
 export default () => (
   <StyledDiv>
-    <StyledImg src="/static/logo.svg" />
+    <a href="/index">
+      <StyledImg src="/static/logohorizontal.svg" alt="Logo da empresa" />
+    </a>
     <StyledUl>
       <StyledLi>
-        <a href="#portfolio">Portfolio</a>
+        <StyledA href="/index">Home</StyledA>
       </StyledLi>
       <StyledLi>
-        Menu2
+        <StyledA href="#sobre">Sobre</StyledA>
       </StyledLi>
       <StyledLi>
-        Menu3
+        <StyledA href="#portfolio">Portfolio</StyledA>
       </StyledLi>
       <StyledLi>
-        Menu4
+        <StyledA href="/contact">Orçamento</StyledA>
+      </StyledLi>
+      <StyledLi>
+        <StyledA href="/contact">Contato</StyledA>
       </StyledLi>
     </StyledUl>
-    <Social />
+    <Social fill={grey} width="auto" height="20px" />
   </StyledDiv>
 )
