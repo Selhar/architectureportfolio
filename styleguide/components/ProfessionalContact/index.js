@@ -21,13 +21,13 @@ const projectType = [
     label: 'Imagem ilustrativa'
   },{ 
     id: 'animationmodel',
-    label: 'Modelagem de animação'
+    label: 'Modelagem em 3d'
   },{ 
     id: 'videomodel',
-    label: 'Modelagem de vídeo'
+    label: 'Animação/vídeo'
   },{ 
     id: 'image',
-    label: 'Imagem 360º'
+    label: 'Imagens 360º'
   },
 ]
 
