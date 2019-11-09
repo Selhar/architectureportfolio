@@ -12,8 +12,23 @@ const StyledH1 = styled.h1`
   margin-bottom: 35px;
 `;
 
+const Overlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+`;
+
+const Overlay2 = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+`;
+
 const CenterMessage = styled.div`
   position: absolute;
+  opacity: 1 !important;
   top: ${props => (props.center ? "50%" : "99%")};
   left: 50%;
   transform: translate(-50%, -50%);
@@ -22,6 +37,20 @@ const CenterMessage = styled.div`
   text-transform: uppercase;
   font-size: 20px;
   color: white;
+  max-width: 400px;
+`;
+
+const CenterMessage2 = styled.div`
+  position: absolute;
+  opacity: 1 !important;
+  top: ${props => (props.center ? "50%" : "99%")};
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: black;
   max-width: 400px;
 `;
 
@@ -38,14 +67,22 @@ const Images = [
     thumbnail: "/static/portfolio/Interiores/14.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay2>
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay2>
+    )
   },
   {
     src: "/static/portfolio/Interiores/16.1.jpg",
     thumbnail: "/static/portfolio/Interiores/16.1.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay2>
+        <CenterMessage2 center>Mensagem</CenterMessage2>
+      </Overlay2>
+    )
   },
   {
     src: "/static/portfolio/Interiores/20.jpg",
@@ -88,19 +125,11 @@ const Images = [
     thumbnailWidth: 620,
     thumbnailHeight: 312,
     customOverlay: <CenterMessage center>Mensagem</CenterMessage>
-  },
-  {
-    src: "/static/portfolio/Playground - Piscina/PISCINA - Àrea Gourmet.jpg",
-    thumbnail:
-      "/static/portfolio/Playground - Piscina/PISCINA - Àrea Gourmet.jpg",
-    thumbnailWidth: 620,
-    thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
   }
 ];
 
 export default () => (
-  <StyledDiv id="portfolio">
+  <StyledDiv>
     <StyledH1>Projetos</StyledH1>
     <Gallery
       images={Images}
