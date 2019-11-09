@@ -11,8 +11,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-import { primary, secondary, yellow, grey } from "../../colors";
-import { mensagemSplash } from "../../data";
+import { secondary, grey } from "../../colors";
 
 const StyledDiv = styled.div`
   position: relative;
@@ -41,7 +40,7 @@ const SliderContainer = styled.div`
 `;
 
 const StyledButtonBack = styled(ButtonBack)`
-  color: ${primary};
+  color: ${grey};
   background-color: white;
   border-radius: 50px;
   padding: 0 10px;
@@ -53,7 +52,7 @@ const StyledButtonBack = styled(ButtonBack)`
 `;
 
 const StyledButtonNext = styled(ButtonNext)`
-  color: ${primary};
+  color: ${grey};
   background-color: white;
   border-radius: 50px;
   padding: 0 10px;
