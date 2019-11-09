@@ -1,24 +1,29 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+  DotGroup,
+  Image
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
-import {email, mensagemSplash} from '../../data'
+import { primary, secondary, yellow, grey } from "../../colors";
+import { mensagemSplash } from "../../data";
 
 const StyledDiv = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
   margin-top: 100px;
-`
-
-const StyledImg = styled.img`
-  height: auto;
-  width: 100%;
-  max-width: 100%;
-`
+`;
 
 const CenterMessage = styled.div`
   position: absolute;
-  top: ${props => props.center ? '50%' : '99%'};
+  top: ${props => (props.center ? "50%" : "99%")};
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
@@ -27,11 +32,88 @@ const CenterMessage = styled.div`
   font-size: 20px;
   color: white;
   max-width: 400px;
-`
+`;
+
+const SliderContainer = styled.div`
+  max-width: 100vw;
+  margin: auto;
+  position: relative;
+`;
+
+const StyledButtonBack = styled(ButtonBack)`
+  color: ${primary};
+  background-color: white;
+  border-radius: 50px;
+  padding: 0 10px;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+`;
+
+const StyledButtonNext = styled(ButtonNext)`
+  color: ${primary};
+  background-color: white;
+  border-radius: 50px;
+  padding: 0 10px;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+`;
+
+const StyledDotGroup = styled(DotGroup)`
+  text-align: center;
+  .carousel__dot {
+    background-color: ${grey};
+    font-size: 2em;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+  }
+  .carousel__dot--selected {
+    background-color: ${secondary};
+  }
+`;
 
 export default () => (
   <StyledDiv>
-    <StyledImg src='/static/portfolio/Fachada Residencial/15 grande.jpg' />
-    <CenterMessage center>{mensagemSplash}</CenterMessage>
+    <CarouselProvider
+      naturalSlideWidth={100}
+      naturalSlideHeight={50}
+      totalSlides={3}
+      hasMasterSpinner
+    >
+      <SliderContainer>
+        <Slider>
+          <Slide index={0}>
+            <Image
+              src="/static/portfolio/Fachada Residencial/14 grande.jpg"
+              hasMasterSpinner
+            />
+            <CenterMessage center>Mensagem 1</CenterMessage>
+          </Slide>
+          <Slide index={1}>
+            <Image
+              src="/static/portfolio/Fachada Residencial/14 grande.jpg"
+              hasMasterSpinner
+            />
+            <CenterMessage center>Mensagem 2</CenterMessage>
+          </Slide>
+          <Slide index={2}>
+            <Image
+              src="/static/portfolio/Fachada Residencial/14 grande.jpg"
+              hasMasterSpinner
+            />
+            <CenterMessage center>Mensagem 3</CenterMessage>
+          </Slide>
+        </Slider>
+      </SliderContainer>
+      <StyledButtonBack>{"<"}</StyledButtonBack>
+      <StyledButtonNext>{">"}</StyledButtonNext>
+      <StyledDotGroup showAsSelectedForCurrentSlideOnly />
+    </CarouselProvider>
   </StyledDiv>
-)
+);
