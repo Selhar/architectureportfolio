@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   width: 1200px;
+  .ReactGridGallery_custom-overlay {
+    transition: 0.3s;
+  }
 `;
 
 const StyledH1 = styled.h1`
@@ -16,41 +19,17 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.5;
-`;
-
-const Overlay2 = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: black;
   opacity: 0.8;
 `;
-
 const CenterMessage = styled.div`
   position: absolute;
-  opacity: 1 !important;
   top: ${props => (props.center ? "50%" : "99%")};
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
   padding: 10px;
   text-transform: uppercase;
   font-size: 20px;
   color: white;
-  max-width: 400px;
-`;
-
-const CenterMessage2 = styled.div`
-  position: absolute;
-  opacity: 1 !important;
-  top: ${props => (props.center ? "50%" : "99%")};
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 10px;
-  text-transform: uppercase;
-  font-size: 20px;
-  color: black;
   max-width: 400px;
 `;
 
@@ -60,7 +39,11 @@ const Images = [
     thumbnail: "/static/portfolio/Fachada Residencial/14 grande.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/Interiores/14.jpg",
@@ -68,9 +51,9 @@ const Images = [
     thumbnailWidth: 620,
     thumbnailHeight: 312,
     customOverlay: (
-      <Overlay2>
+      <Overlay className="mainOverlay">
         <CenterMessage center>Mensagem</CenterMessage>
-      </Overlay2>
+      </Overlay>
     )
   },
   {
@@ -79,9 +62,9 @@ const Images = [
     thumbnailWidth: 620,
     thumbnailHeight: 312,
     customOverlay: (
-      <Overlay2>
-        <CenterMessage2 center>Mensagem</CenterMessage2>
-      </Overlay2>
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
     )
   },
   {
@@ -89,53 +72,72 @@ const Images = [
     thumbnail: "/static/portfolio/Interiores/20.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/Interiores/26.jpg",
     thumbnail: "/static/portfolio/Interiores/26.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/Interiores/7.jpg",
     thumbnail: "/static/portfolio/Interiores/7.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/lavandacoletiva/lavanderia08.jpg",
     thumbnail: "/static/portfolio/lavandacoletiva/lavanderia08.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/lavandacoletiva/LAVANDERIA10.jpg",
     thumbnail: "/static/portfolio/lavandacoletiva/LAVANDERIA10.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   },
   {
     src: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
     thumbnail: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
     thumbnailWidth: 620,
     thumbnailHeight: 312,
-    customOverlay: <CenterMessage center>Mensagem</CenterMessage>
+    customOverlay: (
+      <Overlay className="mainOverlay">
+        <CenterMessage center>Mensagem</CenterMessage>
+      </Overlay>
+    )
   }
 ];
 
 export default () => (
   <StyledDiv>
     <StyledH1>Projetos</StyledH1>
-    <Gallery
-      images={Images}
-      rowHeight={250}
-      enableImageSelection={false}
-      customOverlay={<div>tomanocumen</div>}
-    />
+    <Gallery images={Images} rowHeight={250} enableImageSelection={false} />
   </StyledDiv>
 );

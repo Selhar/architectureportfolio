@@ -1,16 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     return (
       <Html>
         <Head>
-          <title>Thaís portfólio</title>
+          <title>Thaís Sacramento Modelagem 3D</title>
           <style>
             {`
               @font-face {
@@ -31,15 +31,18 @@ class MyDocument extends Document {
             content="width=device-width, initial-scale=1, user-scalable=no"
           />
           <link rel="icon" type="image/png" href="/static/favicon.png" />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

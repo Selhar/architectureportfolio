@@ -19,7 +19,7 @@ const StyledSection = styled.section`
   width: 100%;
   height: ${props => props.height || ""};
   &:not(:first-of-type) {
-    padding: 130px 0 50px 0;
+    padding: 50px 0 0 0;
   }
 
   & > * {

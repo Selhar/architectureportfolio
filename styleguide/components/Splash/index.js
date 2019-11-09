@@ -84,6 +84,8 @@ export default () => (
       naturalSlideHeight={50}
       totalSlides={3}
       hasMasterSpinner
+      isPlaying
+      interval={5000}
     >
       <SliderContainer>
         <Slider>
