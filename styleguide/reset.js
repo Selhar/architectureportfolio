@@ -15,7 +15,11 @@ export default createGlobalStyle`
       font-family: 'Sensation Bold';
       src: url('/static/fonts/sansation_bold.ttf');
   }
-
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body{
     margin: 0 auto;
     font-family: 'Geogrotesque', sans-serif;
