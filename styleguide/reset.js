@@ -29,6 +29,7 @@ export default createGlobalStyle`
       padding: 0;
       text-decoration: none;
       box-sizing: border-box;
+      outline: none;
     }
   }
 
