@@ -27,7 +27,7 @@ const CenterMessage = styled.div`
   top: ${props => (props.center ? "50%" : "99%")};
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 20px;
   text-transform: uppercase;
   font-size: 20px;
