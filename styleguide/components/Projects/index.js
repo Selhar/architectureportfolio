@@ -3,7 +3,7 @@ import Gallery from "react-grid-gallery";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  width: 1200px;
+  width: 100%;
   .ReactGridGallery_custom-overlay {
     transition: 0.3s;
   }
@@ -138,6 +138,11 @@ const Images = [
 export default () => (
   <StyledDiv>
     <StyledH1>Projetos</StyledH1>
-    <Gallery images={Images} rowHeight={250} enableImageSelection={false} />
+    <Gallery
+      images={Images}
+      rowHeight={250}
+      enableImageSelection={false}
+      style={"max-width: 100vw"}
+    />
   </StyledDiv>
 );

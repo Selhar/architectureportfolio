@@ -6,24 +6,35 @@ import Social from "../Social";
 
 const StyledDiv = styled.div`
   display: flex;
+  flex-direction: column;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
   justify-content: space-around;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
   background-color: white;
   font-size: 20px;
   border-bottom: 2px solid ${yellow};
   padding: 20px;
+
+  @media (min-width: 1200px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
 `;
 
 const StyledUl = styled.ul`
   display: flex;
+  flex-direction: column;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
   list-style: none;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 `;
 
 const StyledLi = styled.li`
@@ -31,8 +42,12 @@ const StyledLi = styled.li`
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
-  :not(:first-of-type) {
-    margin-left: 20px;
+  margin-left: 0;
+
+  @media (min-width: 1200px) {
+    :not(:first-of-type) {
+      margin-left: 20px;
+    }
   }
 `;
 

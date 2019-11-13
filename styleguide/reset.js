@@ -23,6 +23,7 @@ export default createGlobalStyle`
   body{
     margin: 0 auto;
     font-family: 'Geogrotesque', sans-serif;
+    max-width: 100vw;
     & * {
       margin: 0;
       border: 0;

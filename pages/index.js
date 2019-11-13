@@ -26,8 +26,9 @@ const StyledSection = styled.section`
     max-width: 1600px;
     margin: 0 auto;
   }
-
-  margin-top: ${props => (props.menuSpacing ? "100px" : "")};
+  @media (min-width: 1200px) {
+    margin-top: ${props => (props.menuSpacing ? "100px" : "")};
+  }
 `;
 
 const Home = () => (

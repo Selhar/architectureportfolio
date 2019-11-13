@@ -17,7 +17,9 @@ const StyledDiv = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: 100px;
+  @media (min-width: 1200px) {
+    margin-top: 100px;
+  }
 `;
 
 const CenterMessage = styled.div`
@@ -34,7 +36,7 @@ const CenterMessage = styled.div`
 `;
 
 const SliderContainer = styled.div`
-  max-width: 100vw;
+  max-width: 1600px;
   margin: auto;
   position: relative;
 `;
