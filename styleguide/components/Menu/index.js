@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { primary, secondary, yellow, grey } from "../../colors";
+import { secondary, yellow, grey } from "../../colors";
 import Social from "../Social";
 
 const StyledDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   @media (min-width: 1200px) {
-    flex-direction: row;
   }
   justify-content: space-around;
   align-items: center;
@@ -29,12 +28,13 @@ const StyledDiv = styled.div`
 const StyledUl = styled.ul`
   display: flex;
   flex-direction: column;
-  @media (min-width: 1200px) {
-    flex-direction: row;
-  }
   list-style: none;
   justify-content: center;
   align-items: left;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 `;
 
 const StyledLi = styled.li`
@@ -42,13 +42,8 @@ const StyledLi = styled.li`
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin-left: 0;
-
-  @media (min-width: 1200px) {
-    :not(:first-of-type) {
-      margin-left: 20px;
-    }
-  }
+  margin-left: 20px;
+  margin-top: 5px;
 `;
 
 const StyledA = styled.a`
@@ -59,14 +54,31 @@ const StyledA = styled.a`
 `;
 
 const StyledImg = styled.img`
-  width: 250px;
+  width: ${props => props.width || "250px"};
   height: auto;
+`;
+
+const HideSmall = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+const HideLarge = styled.div`
+  @media (min-width: 1200px) {
+    display: none;
+  }
 `;
 
 export default () => (
   <StyledDiv>
     <a href="/index">
-      <StyledImg src="/static/logohorizontal.svg" alt="Logo da empresa" />
+      <HideSmall>
+        <StyledImg src="/static/logohorizontal.svg" alt="Logo da empresa" />
+      </HideSmall>
+      <HideLarge>
+        <StyledImg src="/static/logo.svg" alt="Logo da empresa" width="50px" />
+      </HideLarge>
     </a>
     <StyledUl>
       <StyledLi>
