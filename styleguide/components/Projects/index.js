@@ -13,6 +13,8 @@ const StyledH1 = styled.h1`
   text-align: center;
   font-size: 35px;
   margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 `;
 
 const Overlay = styled.div`
@@ -31,6 +33,13 @@ const CenterMessage = styled.div`
   font-size: 20px;
   color: white;
   max-width: 400px;
+`;
+
+const GalleryWrapper = styled.div`
+  display: block;
+  min-height: 1px;
+  width: 100%;
+  overflow: auto;
 `;
 
 const Images = [
@@ -121,28 +130,24 @@ const Images = [
         <CenterMessage center>Mensagem</CenterMessage>
       </Overlay>
     )
-  },
-  {
-    src: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
-    thumbnail: "/static/portfolio/lavandacoletiva/LAVANDERIA11.jpg",
-    thumbnailWidth: 620,
-    thumbnailHeight: 312,
-    customOverlay: (
-      <Overlay className="mainOverlay">
-        <CenterMessage center>Mensagem</CenterMessage>
-      </Overlay>
-    )
   }
 ];
 
 export default () => (
   <StyledDiv>
     <StyledH1>Projetos</StyledH1>
-    <Gallery
-      images={Images}
-      rowHeight={250}
-      enableImageSelection={false}
-      style={"max-width: 100vw"}
-    />
+    <GalleryWrapper>
+      <Gallery
+        images={Images}
+        rowHeight={250}
+        enableImageSelection={false}
+        style={"max-width: 100vw"}
+        lightboxWidth={5000}
+        backdropClosesModal
+        showLightboxThumbnails
+        imageCountSeparator={" de "}
+        maxRows={3}
+      />
+    </GalleryWrapper>
   </StyledDiv>
 );
