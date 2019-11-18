@@ -19,6 +19,8 @@ const TextWrapper = styled.div`
 
 const StyledH1 = styled.h1`
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
   @media (min-width: 1200px) {
     text-align: left;
   }
@@ -29,6 +31,7 @@ const StyledImage = styled.img`
   @media (min-width: 1200px) {
     height: 600px;
     width: auto;
+    display: initial;
   }
 `;
 
@@ -37,7 +40,7 @@ const StyledParagraph = styled.p`
     max-width: 400px;
   }
   padding: 20px;
-  margin-top: 25px;
+  padding-left: 20px;
   text-align: justify;
 `;
 
