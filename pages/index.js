@@ -7,6 +7,7 @@ import Menu from "../styleguide/components/Menu";
 import Splash from "../styleguide/components/Splash";
 import About from "../styleguide/components/About";
 import Projects from "../styleguide/components/Projects";
+import Footer from "../styleguide/components/Footer";
 
 const StyledSplash = styled(Splash)`
   z-index: -1;
@@ -19,7 +20,10 @@ const StyledSection = styled.section`
   width: 100%;
   height: ${props => props.height || ""};
   &:not(:first-of-type) {
-    padding: 50px 0 0 0;
+    padding: 30px 0 0 0;
+    @media (min-width: 1200px) {
+      padding: 110px 0 0 0;
+    }
   }
 
   & > * {
@@ -41,8 +45,11 @@ const Home = () => (
     <StyledSection id="sobre" color="white">
       <About />
     </StyledSection>
-    <StyledSection id="portfolio" color="white" height="600px">
+    <StyledSection id="portfolio" color="white">
       <Projects />
+    </StyledSection>
+    <StyledSection id="footer" color="white">
+      <Footer />
     </StyledSection>
   </React.Fragment>
 );
