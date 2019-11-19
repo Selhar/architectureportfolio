@@ -9,6 +9,7 @@ import About from "../styleguide/components/About";
 import Projects from "../styleguide/components/Projects";
 import Footer from "../styleguide/components/Footer";
 
+import "../style.css";
 const StyledSplash = styled(Splash)`
   z-index: -1;
   border: 5px solid blue;
@@ -42,6 +43,7 @@ const Home = () => (
     <StyledSection id="splash" color="white" menuSpacing>
       <StyledSplash />
     </StyledSection>
+    <h1 className="text-purple-500 leading-normal">gudamzinho</h1>
     <StyledSection id="sobre" color="white">
       <About />
     </StyledSection>
