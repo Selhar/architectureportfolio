@@ -1,12 +1,28 @@
 @tailwind base;
 
 @font-face {
-  font-family: 'Geogrotesque', sans-serif;
+  font-family: 'Geogrotesque';
   src: url('/static/fonts/Geogtq-Md.otf');
 }
 
-body {
+@font-face {
+  font-family: 'Sensation Regular';
+  src: url('/static/fonts/sansation_regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sensation Bold';
+  src: url('/static/fonts/sansation_bold.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0 auto;
   font-family: 'Geogrotesque', sans-serif;
+  max-width: 100vw;
 }
 
 @tailwind components;
