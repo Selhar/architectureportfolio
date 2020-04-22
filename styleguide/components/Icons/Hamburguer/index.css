@@ -1,0 +1,12 @@
+.hamburguer-row {
+  width: 20px;
+  height: 2px;
+}
+
+.hamburguer-row:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.hamburguer-padding {
+  padding: .35em;
+}

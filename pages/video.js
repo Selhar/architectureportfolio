@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../styleguide/components/Header"
-import Carousel from "../styleguide/components/Carousel"
+import Video from "../styleguide/components/Video"
 import About from "../styleguide/components/About"
 import Section from "../styleguide/components/Section"
 import Portfolio from "../styleguide/components/Portfolio"
@@ -13,21 +13,17 @@ import {perfis, projectType} from "../styleguide/data"
 const Home = () => (
   <div className="relative">
     <Header classes="p-4"/>
-    <Carousel images={[
-      "/static/portfolio/Fachada Residencial/final noite 3.jpg", 
-      "/static/portfolio/Interiores/7.jpg", 
-      "/static/portfolio/lavandacoletiva/LAVANDERIA10.jpg"
-      ]} />
-    <Section id="about" classes="bg-yellow">
+    <Video videosrc="https://static.videezy.com/system/resources/previews/000/041/079/original/029_07.mp4" />
+    <Section id="about" classes="bg-white">
       <About />
     </Section>
-    <Section id="portfolio" classes="bg-orange">
+    <Section id="portfolio" classes="bg-white">
       <Portfolio />
     </Section>
-    <Section id="orcamento" classes="bg-yellow">
-      <Orcamento perfis={perfis} projectType={projectType}/>
+    <Section id="orcamento" classes="bg-white">
+      <Orcamento perfis={perfis} projectType={projectType} white />
     </Section>
-    <Section id="contact" classes="bg-orange">
+    <Section id="contact" classes="bg-white">
       <Contact />
     </Section>
   </div>
