@@ -1,4 +1,32 @@
+/* purgecss start ignore */
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* purgecss end ignore */
+
+.text-yellow {
+  color: #ECC400;
+}
+
+.icon-primary {
+  fill: #FFF;
+}
+
+.icon-primary:hover {
+  fill: #ECC400;
+}
+
+.max-w-screen-xxl {
+  max-width: 1600px;
+}
+
+img{
+  display: initial;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
 
 @font-face {
   font-family: 'Geogrotesque';
@@ -25,5 +53,3 @@ body{
   max-width: 100vw;
 }
 
-@tailwind components;
-@tailwind utilities;
