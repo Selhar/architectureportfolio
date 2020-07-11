@@ -1,1 +1,2 @@
-Initial readme file.
+@TODO:
+- enviar emails
