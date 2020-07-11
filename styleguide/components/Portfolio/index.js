@@ -61,7 +61,7 @@ const images = [
 
 export default () => (
   <div className="w-10/12 m-auto" >
-    <h1 className="font-bold uppercase tracking-widest text-center text-3xl mb-3">Portfolio</h1>
+    <h1 className="title font-bold uppercase tracking-widest text-center text-3xl mb-3 arrow relative mb-5 sm:mb-10">Portfólio</h1>
     <div>
       <Gallery images={images}
       />

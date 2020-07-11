@@ -16,16 +16,16 @@ const Header = () => {
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y < -30) {
-        setScrolled("fixed sm:bg-black sm:pt-2 sm:pb-2 ")
-        setLogoSize("w-48")
+        setScrolled("fixed bg-grey sm:pt-2 sm:pb-2 ")
+        setLogoSize("w-56")
       } else {
         setScrolled("absolute pt-4 pb-4 ")
-        setLogoSize("w-56")
+        setLogoSize("w-48")
       }
     }
   )
   return (
-    <div className={scrolled + "p-4 sm:p-0 sm:justify-around flex flex-row justify-between items-center z-10 transition-menu w-full left-0 top-0"}>
+    <div className={scrolled + "pl-4 sm:p-4 sm:p-0 sm:justify-around flex flex-row justify-between items-center z-10 transition-menu w-full left-0 top-0"}>
       <Logo open={open} logoSize={logoSize}/>
       <Menu items={menuItems} open={open} setOpen={setOpen} classes="" />
       <Social classes={"sm:flex flex-row hidden"}/>

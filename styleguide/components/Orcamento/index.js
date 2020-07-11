@@ -4,26 +4,29 @@ import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, 'Muito curto!')
-    .max(50, 'Muito longo!')
     .required('Campo obrigatório'),
   perfil: Yup.string()
-    .required('Selecione o seu perfil'),
+    .required('Campo obrigatório'),
   projectType: Yup.string()
-    .required('Selecione o seu tipo de projeto'),
+    .required('Campo obrigatório'),
   email: Yup.string()
     .email('E-mail inválido')
     .required('Campo obrigatório'),
+  phone: Yup.string()
+    .required('Campo obrigatório')
 });
 
 export default ({perfis, projectType}) => (
-  <div className="w-11/12 sm:w-2/3 xl:w-1/3 m-auto">
-    <h1 className="text-center text-3xl mb-8 font-bold tracking-widest uppercase">Orçamento</h1>
+  <div className="w-11/12 lg:w-2/3 xxl:w-1/3 m-auto ">
+    <h1 className="text-center text-3xl sm:mb-10 font-bold tracking-widest uppercase arrow relative title">Orçamento</h1>
     <Formik
       initialValues={{
         firstName: '',
         lastName: '',
         email: '',
+        projectType: '',
+        perfil: '',
+        phone: '',
       }}
       validationSchema={SignupSchema}
       onSubmit={values => {
@@ -31,53 +34,85 @@ export default ({perfis, projectType}) => (
       }}
     >
       {({ errors }) => (
-        <Form className="flex flex-col">
+        <Form className="flex flex-col mt-5 sm:mt-0">
           <div className="mb-2 w-full">
-            <Field className="rounded p-3 w-full" placeholder="Nome" name="firstName" />
-            {errors.firstName ? (
-              <div>{errors.firstName}</div>
-            ) : null}
+            <Field placeholder="Nome" name="firstName">
+            {({field,meta}) => (<div>
+              <input className="rounded-md bg-lightGrey placeholder-white placeholder-opacity-75 p-4 w-full" type="text" placeholder="Nome/Apelido" {...field} />
+                {meta.touched && meta.error && (
+                    <div className="error">{meta.error}</div>
+                )}
+              </div>
+            )}
+            </Field>
           </div>
           <div className="mb-2 w-full">
-            <Field className="rounded p-3 w-full" placeholder="E-mail" name="email" type="email" />
-              {errors.email ? <div>{errors.email}</div> : null}
+            <Field placeholder="E-mail" name="email" type="email">
+              {({field,meta}) => (<div>
+                <input className="rounded-md bg-lightGrey placeholder-white placeholder-opacity-75 p-4 w-full" type="text" placeholder="E-mail" {...field} />
+                  {meta.touched && meta.error && (
+                      <div className="error">{meta.error}</div>
+                  )}
+                </div>
+              )}
+            </Field>
           </div>
           <div className="flex flex-col sm:flex-row justify-between">
             <div className="w-full mr-2 mb-2">
-              <Field className="rounded w-full bg-orange p-4" name="perfil" component="select" placeholder="Escolha seu perfil">
-                <option defaultValue>Escolha seu perfil</option>
-                {perfis.map(perfil => (
-                  <option key={perfil.id} value={perfil.label}>
-                    {perfil.label}
-                  </option>
-                ))}
+              <Field name="perfil">
+                {({field,meta}) => (<div>
+                    <select name="perfil" placeholder="Escolha seu perfil" className="rounded-md w-full p-4 bg-orange placeholder-white placeholder-opacity-75" {...field} >
+                      <option name="perfil" defaultValue>Escolha seu perfil</option>
+                      {perfis.map(perfil => (
+                        <option name="perfil" key={perfil.id} value={perfil.label}>
+                          {perfil.label}
+                        </option>
+                      ))}
+                    </select>
+                    {meta.touched && meta.error && (
+                      <div className="error">{meta.error}</div>
+                    )}
+                  </div>
+                )}
               </Field>
-              {errors.perfil? (
-                <div>{errors.perfil}</div>
-              ) : null}
             </div>
             <div className="w-full mb-2">
-              <Field className="rounded w-full bg-orange p-4" name="projectType" component="select" placeholder="Escolha o tipo de projeto">
-                <option defaultValue>Escolha seu tipo de projeto</option>
-                {projectType.map(project => (
-                  <option key={project.id} value={project.label}>
-                    {project.label}
-                  </option>
-                ))}
+            <Field name="projectType">
+                {({field,meta}) => (<div>
+                    <select name="projectType" placeholder="Escolha seu tipo de projeto" className="rounded-md w-full p-4 bg-orange placeholder-white placeholder-opacity-75" {...field} >
+                      <option defaultValue>Escolha seu tipo de projeto</option>
+                      {projectType.map(projectType => (
+                        <option key={projectType.id} value={projectType.label}>
+                          {projectType.label}
+                        </option>
+                      ))}
+                    </select>
+                    {meta.touched && meta.error && (
+                      <div className="error">{meta.error}</div>
+                    )}
+                  </div>
+                )}
               </Field>
-              {errors.projectType ? (
-                <div>{errors.projectType}</div>
-              ) : null}
             </div>
           </div>
+          <div className="mb-2 w-full">
+            <Field placeholder="Telefone" name="phone">
+            {({field,meta}) => (<div>
+              <input className="rounded-md bg-lightGrey placeholder-white placeholder-opacity-75 p-4 w-full" type="text" placeholder="Telefone" {...field} />
+                {meta.touched && meta.error && (
+                    <div className="error">{meta.error}</div>
+                )}
+              </div>
+            )}
+            </Field>
+          </div>
           <Field 
-            className="rounded mb-2 p-3" 
+            className="rounded-md bg-lightGrey placeholder-white placeholder-opacity-75 p-4 w-full" 
             component="textarea"
-            placeholder="Caso sinta necessidade, fale um pouquinho sobre o projeto!" 
+            placeholder="Fale um pouquinho sobre o projeto!" 
             name="description" />
-
-
-          <button className="bg-orange mt-2 w-40 m-auto p-2 text-center rounded" type="submit">Enviar proposta</button>
+            
+          <button className="mt-5 w-40 m-auto p-2 text-center rounded-md bg-orange" type="submit">Enviar proposta</button>
         </Form>
       )}
     </Formik>

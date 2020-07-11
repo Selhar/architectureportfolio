@@ -19,7 +19,7 @@ export default ({images}) => {
 
 
   return (
-    <div className="h-full w-full cursor-move max-h-full max-w-full overflow-hidden">
+    <div className="h-full w-full cursor-move max-h-full max-w-full overflow-hidden mb-10 sm:mb-20">
       <CarouselProvider
         naturalSlideWidth={16}
         naturalSlideHeight={9}
