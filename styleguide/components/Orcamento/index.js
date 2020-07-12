@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
+import emailjs from 'emailjs-com';
 
 const SignupSchema = Yup.object().shape({
-  firstName: Yup.string()
+  name: Yup.string()
     .required('Campo obrigatório'),
   perfil: Yup.string()
     .required('Campo obrigatório'),
@@ -26,8 +27,7 @@ export default ({perfis, projectType}) => {
       <h1 className="text-center text-3xl sm:mb-10 font-bold tracking-widest uppercase arrow relative title">Orçamento</h1>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
+          name: '',
           email: '',
           projectType: '',
           perfil: '',
@@ -35,14 +35,16 @@ export default ({perfis, projectType}) => {
         }}
         validationSchema={SignupSchema}
         onSubmit={values => {
+          emailjs.send('gmail', 'contato', values, 'user_FNftmIgR960O1Oawh9AAM')
           setSubmitText("Obrigada pela mensagem, em breve entraremos em contato!");
+          
 
         }}
       >
         {({ errors }) => (
           <Form className="flex flex-col mt-5 sm:mt-0">
             <div className="mb-2 w-full">
-              <Field placeholder="Nome" name="firstName">
+              <Field placeholder="Nome" name="name">
               {({field, meta}) => (<div>
                 <input className="rounded-md bg-lightGrey placeholder-white placeholder-opacity-75 p-4 w-full" type="text" placeholder="Nome" {...field} />
                   {meta.touched && meta.error && (
