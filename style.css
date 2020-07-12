@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.error {
+  color: #ffc100;
+}
+
 .arrow::before {
   content: "";
   position: absolute;
