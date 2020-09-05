@@ -1,6 +1,23 @@
 @tailwind base;
 
 /* Base styles */
+@font-face {
+  font-family: "Geogrotesque";
+  font-weight: 400;
+  src: url("/fonts/Geogtq-Md.otf");
+}
+
+@font-face {
+  font-family: "Sensation Regular";
+  font-weight: 400;
+  src: url("/fonts/sansation_regular.ttf");
+}
+
+@font-face {
+  font-family: "Sensation Bold";
+  font-weight: 400;
+  src: url("/fonts/sansation_bold.ttf");
+}
 
 /* Start purging... */
 @tailwind components;
@@ -13,10 +30,7 @@
 /* Custom utilities */
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply font-body;
 }
 
 a {
