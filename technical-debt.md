@@ -1,9 +1,0 @@
-- Configure purgecss
-- cortar as imagens em aspect ratio mobile
-- imagem maior que viewport
-- abrir ícones de social media em outra aba
-- transição do menu
-- seta pra baixo
-- gerar thumbnail das imagens da galeria
-- efeitos de fade/transição
-- alt text das imagens
