@@ -1,9 +1,25 @@
+import { Icons } from "./components/utils/enums";
+
 export const contato = {
   email: "tsmodelagem3d@gmail.com",
-  instagram: "https://www.instagram.com/tsmodelagem3d/",
-  whatsapp: "https://wa.me/5571999019845",
   telefone: "+55 (71) 9 9901-9845",
+  socialNetworks: [
+    {
+      name: "instagram",
+      url: "https://www.instagram.com/tsmodelagem3d/",
+      src: "/icons/instagram.svg",
+      iconName: Icons.instagram,
+    },
+    {
+      name: "whatsapp",
+      url: "https://wa.me/5571999019845",
+      src: "/icons/whatsapp.svg",
+      iconName: Icons.whatsapp,
+    },
+  ],
 };
+
+export const legendaLogo = "Logo TSModelagem3D";
 
 export const headerMenu = [
   { name: "home", url: "#home" },

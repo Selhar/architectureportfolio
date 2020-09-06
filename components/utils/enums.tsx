@@ -4,9 +4,20 @@ export enum Direction {
 }
 
 export enum LogoLayout {
-  logo = "/logo.svg",
-  logoLegendaHorizontal = "/logoLegendaHorizontal.svg",
-  logoLegendaVertical = "/logoLegendaVertical.svg",
+  logo = "/logos/logo.svg",
+  logoLegendaHorizontal = "/logos/logoLegendaHorizontal.svg",
+  logoLegendaVertical = "/logos/logoLegendaVertical.svg",
+}
+
+export enum Icons {
+  whatsapp,
+  instagram,
+}
+
+export enum LinkTypes {
+  Logo,
+  Icon,
+  Text,
 }
 
 export enum LogoSizes {

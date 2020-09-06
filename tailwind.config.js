@@ -5,6 +5,10 @@ module.exports = {
   },
   purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fill: (theme) => ({
+      yellow: theme("colors.yellow"),
+      white: theme("colors.white"),
+    }),
     fontFamily: {
       body: [
         "Geogrotesque",
@@ -40,6 +44,6 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: { fill: ["responsive", "hover"] },
   plugins: [],
 };

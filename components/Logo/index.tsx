@@ -1,14 +1,21 @@
-import { LogoLayout, LogoSizes } from "../utils/enums";
+import Link from "../Link";
+import { LinkTypes } from "../utils/enums";
+import { legendaLogo } from "../../data";
 
 type Logo = {
-  type: LogoLayout;
-  size: LogoSizes;
+  src: string;
+  url: string;
+  itemClasses: string;
 };
 
-const Logo = ({ type, size }: Logo) => (
-  <a href="#">
-    <img src={type} className="w-56" />
-  </a>
+const Logo = ({ src, url, itemClasses }: Logo) => (
+  <Link
+    alt={legendaLogo}
+    type={LinkTypes.Logo}
+    itemClasses={itemClasses}
+    src={src}
+    url={url}
+  />
 );
 
 export default Logo;
