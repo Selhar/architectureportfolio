@@ -39,8 +39,13 @@ module.exports = {
       ],
     },
     extend: {
+      boxShadow: {
+        menu: "inset 0px 71px 38px -30px rgba(0,0,0, 0.7)",
+      },
       colors: {
         yellow: "#ffc100",
+        black: "#111",
+        orange: "#955d21",
       },
       inset: {
         "1/2": "50%",

@@ -18,7 +18,7 @@ const Menu = () => {
   return (
     <>
       <div
-        className={`px-4 justify-between fixed w-screen z-10 flex ${Media.breakpoint}:justify-around ${Media.breakpoint}:px-0 items-center bg-transparent py-4`}
+        className={`shadow-menu px-4 justify-between fixed w-screen z-10 flex ${Media.breakpoint}:justify-around ${Media.breakpoint}:px-0 items-center bg-transparent py-4`}
       >
         <Logo
           src={LogoLayout.logoLegendaHorizontal}
@@ -60,7 +60,7 @@ const Menu = () => {
       <div
         className={`${
           open ? "w-screen" : "w-0"
-        } absolute top-0 h-screen bg-black lg:hidden transition-all duration-500 ease-in-out z-20 `}
+        } fixed top-0 h-screen bg-black lg:hidden transition-all duration-500 ease-in-out z-20`}
       >
         <div className={"flex flex-row justify-between p-4"}>
           <LinkList
