@@ -32,7 +32,7 @@ html,
 body {
   @apply font-body;
   @apply text-white;
-  overflow: hidden;
+  @apply bg-black;
 }
 
 a {
