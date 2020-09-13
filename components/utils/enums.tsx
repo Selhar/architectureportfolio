@@ -12,6 +12,7 @@ export enum LogoLayout {
 export enum Icons {
   whatsapp,
   instagram,
+  hamburguer,
 }
 
 export enum LinkTypes {
@@ -23,4 +24,9 @@ export enum LinkTypes {
 export enum LogoSizes {
   large = "w-56",
   small = "w-48",
+  xs = "w-8",
+}
+
+export enum Media {
+  breakpoint = "lg",
 }
