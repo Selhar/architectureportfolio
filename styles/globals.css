@@ -32,6 +32,7 @@ html,
 body {
   @apply font-body;
   @apply text-white;
+  overflow: hidden;
 }
 
 a {
@@ -41,4 +42,7 @@ a {
 
 * {
   box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
