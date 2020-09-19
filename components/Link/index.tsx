@@ -35,6 +35,7 @@ const Link = ({
         <span>LinkType not found</span>;
     }
   };
+
   return (
     <a href={url} className={classes} target={target}>
       {renderType()}

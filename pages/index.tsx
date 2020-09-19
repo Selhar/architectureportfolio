@@ -2,7 +2,7 @@ import Menu from "../components/Menu";
 import Gallery from "../components/Gallery";
 import Section from "../components/Section";
 import About from "../components/About";
-import Margin from "../components/Margin";
+// import Portfolio from "../components/Portfolio"
 
 export default function IndexPage() {
   return (
@@ -20,11 +20,11 @@ export default function IndexPage() {
         />
       </Section>
       <Section>
-        <Margin />
         <About />
       </Section>
       <Section>
         <div className={"bg-purple-600 w-full h-full"} />
+        {/* <Portfolio /> */}
       </Section>
     </>
   );

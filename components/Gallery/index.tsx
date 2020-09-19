@@ -5,13 +5,13 @@ type Gallery = {
 };
 
 const Gallery = ({ images }: Gallery) => {
-  const [next, setNext] = useState(0);
+  const [currentImage, setcurrentImage] = useState(0);
 
   const AUTOSCROLLING_DURATION = 6000;
 
   useEffect(() => {
     let timer = setInterval(
-      () => setNext(next == 400 ? 0 : next + 100),
+      () => setcurrentImage(currentImage == 400 ? 0 : currentImage + 100),
       AUTOSCROLLING_DURATION
     );
 
@@ -20,7 +20,7 @@ const Gallery = ({ images }: Gallery) => {
 
   return (
     <div
-      className={`flex transition duration-500 all ease-in-out transform translate-x-${next}`}
+      className={`flex transition duration-500 all ease-in-out transform translate-x-${currentImage}`}
     >
       {images.map((image) => (
         <div key={image} className={"flex-shrink-0 w-full m-auto"}>

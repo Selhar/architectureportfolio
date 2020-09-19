@@ -3,7 +3,6 @@ import { Direction, LinkTypes } from "../utils/enums";
 
 type LinkList = {
   items: Array<Item>;
-  direction?: Direction;
   classes?: string;
   itemClasses?: string;
   type: Number;
@@ -19,13 +18,12 @@ type Item = {
 
 const LinkedList = ({
   items,
-  direction,
   classes,
   itemClasses,
   type,
   target,
 }: LinkList) => (
-  <ul className={"flex" + " " + direction + " " + classes}>
+  <ul className={"flex" + " " + classes}>
     {items.map((item) => (
       <Link
         iconName={item.iconName}

@@ -1,8 +1,3 @@
-export enum Direction {
-  column = "flex-col",
-  row = "flex-row",
-}
-
 export enum LogoLayout {
   logo = "/logos/logo.svg",
   logoLegendaHorizontal = "/logos/logoLegendaHorizontal.svg",
@@ -25,8 +20,4 @@ export enum LogoSizes {
   large = "w-56",
   small = "w-48",
   xs = "w-8",
-}
-
-export enum Media {
-  breakpoint = "lg",
 }
