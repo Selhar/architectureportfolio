@@ -1,8 +1,10 @@
-import { AboutPage, Breakpoint } from "../utils/constants";
+import { AboutPage, Breakpoint, Margin } from "../utils/constants";
 import { Title } from "../Title";
 
 const About = () => (
-  <div className={"flex flex-col h-full w-full justify-center "}>
+  <div
+    className={`flex flex-col h-full w-full justify-center ${Margin.section}`}
+  >
     <div className={`flex my-0 mx-auto ${Breakpoint}:justify-center`}>
       <div className={"hidden lg:block w-1/3 h-auto"}>
         <img src="/portfolio/3.png" className={"w-full h-full"} />

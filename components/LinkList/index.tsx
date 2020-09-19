@@ -1,5 +1,4 @@
 import Link from "../Link";
-import { Direction, LinkTypes } from "../utils/enums";
 
 type LinkList = {
   items: Array<Item>;

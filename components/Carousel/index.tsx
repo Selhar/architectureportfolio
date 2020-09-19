@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-type Gallery = {
+type Carousel = {
   images: Array<string>;
 };
 
-const Gallery = ({ images }: Gallery) => {
+const Carousel = ({ images }: Carousel) => {
   const [currentImage, setcurrentImage] = useState(0);
 
   const AUTOSCROLLING_DURATION = 6000;
@@ -24,15 +24,21 @@ const Gallery = ({ images }: Gallery) => {
     >
       {images.map((image) => (
         <div key={image} className={"flex-shrink-0 w-full m-auto"}>
-          <img
-            className={
-              "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
-            }
-            src={image}
-          />
+          <picture>
+            <source
+              media="(max-width:1024px)"
+              srcSet={`http://wonderfulengineering.com/wp-content/uploads/2016/02/mobile-wallpaper-3.jpg`}
+            />
+            <img
+              className={
+                "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
+              }
+              src={image}
+            />
+          </picture>
         </div>
       ))}
     </div>
   );
 };
-export default Gallery;
+export default Carousel;
