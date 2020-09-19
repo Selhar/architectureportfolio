@@ -1,15 +1,15 @@
 import Menu from "../components/Menu";
-import Gallery from "../components/Gallery";
+import Carousel from "../components/Carousel";
 import Section from "../components/Section";
 import About from "../components/About";
-// import Portfolio from "../components/Portfolio"
+import Portfolio from "../components/Portfolio";
 
 export default function IndexPage() {
   return (
     <>
       <Menu />
       <Section>
-        <Gallery
+        <Carousel
           images={[
             "portfolio/1.png",
             "portfolio/2.png",
@@ -19,13 +19,8 @@ export default function IndexPage() {
           ]}
         />
       </Section>
-      <Section>
-        <About />
-      </Section>
-      <Section>
-        <div className={"bg-purple-600 w-full h-full"} />
-        {/* <Portfolio /> */}
-      </Section>
+      <About />
+      <Portfolio />
     </>
   );
 }

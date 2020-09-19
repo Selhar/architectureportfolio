@@ -7,3 +7,15 @@ export const AboutPage = {
 };
 
 export const Breakpoint = "lg";
+
+export const PortfolioPage = {
+  title: "portfólio",
+};
+
+export const HomePage = {
+  images: {},
+};
+
+export const Margin = {
+  section: "mb-16",
+};
