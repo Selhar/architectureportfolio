@@ -20,7 +20,18 @@ export default function IndexPage() {
         />
       </Section>
       <About />
-      <Portfolio />
+      <Portfolio
+        images={[
+          "/portfolio/1.png",
+          "/portfolio/2.png",
+          "/portfolio/3.png",
+          "/portfolio/4.png",
+          "/portfolio/5.png",
+          "/portfolio/6.png",
+          "/portfolio/7.png",
+          "/portfolio/8.png",
+        ]}
+      />
     </>
   );
 }
