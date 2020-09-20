@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 type Carousel = {
   images: Array<string>;
+  galleryMode?: boolean;
 };
 
 const Carousel = ({ images }: Carousel) => {
@@ -11,10 +12,12 @@ const Carousel = ({ images }: Carousel) => {
 
   useEffect(() => {
     let timer = setInterval(
-      () => setcurrentImage(currentImage == 400 ? 0 : currentImage + 100),
+      () =>
+        setcurrentImage(
+          currentImage == images.length * 100 - 100 ? 0 : currentImage + 100
+        ),
       AUTOSCROLLING_DURATION
     );
-
     return () => clearInterval(timer);
   });
 
