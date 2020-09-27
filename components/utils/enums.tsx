@@ -8,6 +8,7 @@ export enum Icons {
   whatsapp,
   instagram,
   hamburguer,
+  cross,
 }
 
 export enum LinkTypes {

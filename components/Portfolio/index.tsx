@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { PortfolioPage, Breakpoint } from "../utils/constants";
+import Icon from "../Icon";
+import { Icons } from "../utils/enums";
 import { Title } from "../Title";
 import Gallery from "../Gallery";
 
@@ -36,11 +38,11 @@ const Portfolio = ({ images }: Portfolio) => {
       >
         <div
           className={
-            "fixed z-50 top-0 right-0 text-6xl uppercase mr-8 cursor-pointer shadow-gallery bg-black leading-tight p-2 mt-4 rounded-full"
+            "fixed z-50 top-0 right-0 uppercase p-4 cursor-pointer leading-tight rounded-full"
           }
           onClick={() => setVisibleCarousel(-1)}
         >
-          x
+          <Icon iconName={Icons.cross} classes={"w-16 h-16"} />
         </div>
         <Gallery images={images} currentImageIndex={visibleCarousel * 100} />
       </div>

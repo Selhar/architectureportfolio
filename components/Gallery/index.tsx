@@ -16,7 +16,6 @@ type ArrowDirection = {
 
 const Gallery = ({ images, currentImageIndex }: Gallery) => {
   const [currentImage, setCurrentImage] = useState(0);
-  console.log(currentImage, currentImageIndex);
 
   useEffect(() => {
     setCurrentImage(currentImageIndex);
@@ -36,11 +35,11 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
   const Arrow = ({ direction }: ArrowDirection) => (
     <div
       className={`absolute top-1/2 ${
-        direction == Direction.left ? "ml-8 left" : "mr-8 right"
-      }-0 text-6xl z-50 shadow-gallery cursor-pointer bg-black leading-snug rounded-md align-middle`}
-    >
-      {direction == Direction.left ? "<" : ">"}
-    </div>
+        direction == Direction.left
+          ? " border-l-2 border-b-2 ml-12 left"
+          : " border-r-2 border-t-2 mr-12 right"
+      }-0 text-6xl font-hairline z-50 cursor-pointer leading-snug align-middle border-yellow border-solid w-20 h-20 transform rotate-45`}
+    />
   );
 
   return (
@@ -88,6 +87,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
         <div className={"flex flex-row "}>
           {images.map((image, index) => (
             <img
+              key={"imagelistitem-" + index}
               onClick={() => setCurrentImage(index * 100)}
               className={"flex-grow flex-shrink w-0"}
               src={image}
