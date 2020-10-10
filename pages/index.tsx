@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function IndexPage() {
   return (
@@ -12,29 +13,30 @@ export default function IndexPage() {
       <Section>
         <Carousel
           images={[
-            "portfolio/1.png",
-            "portfolio/2.png",
-            "portfolio/3.png",
-            "portfolio/4.png",
-            "portfolio/5.png",
+            "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+            "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+            "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+            "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+            "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
           ]}
         />
       </Section>
       <About />
       <Portfolio
         images={[
-          "/portfolio/1.png",
-          "/portfolio/2.png",
-          "/portfolio/3.png",
-          "/portfolio/4.png",
-          "/portfolio/5.png",
-          "/portfolio/6.png",
-          "/portfolio/7.png",
-          "/portfolio/8.png",
-          "/portfolio/a.png",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
+          "http://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Free-City-1080p-Background-HD.jpg",
         ]}
       />
       <Contact />
+      <Footer />
     </>
   );
 }

@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <div className={"max-w-2xl mx-auto my-0"}>
+    <div className={"max-w-2xl mx-auto my-0 mb-16"}>
       <Title classes={"text-center"} text="Orçamento" />
       <Formik
         initialValues={initialValues}
