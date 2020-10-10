@@ -1,18 +1,18 @@
 import Logo from "../Logo";
 import { LogoLayout, LogoSizes } from "../utils/enums";
-import { Breakpoint } from "../utils/constants";
+import { Telefone, Email } from "../utils/constants";
 
 const Footer = () => (
   <div className="py-16 bg-lightGrey">
     <div className="font-bold tracking-wider flex justify-center items-center lg:flex-row flex-col">
-      <span>{21312312312312}</span>
+      <span>{Telefone}</span>
       <Logo
         src={LogoLayout.logoLegendaVertical}
         url="#"
         classes={`block`}
         itemClasses={LogoSizes.large}
       />
-      <span>{312312312312}</span>
+      <span>{Email}</span>
     </div>
   </div>
 );

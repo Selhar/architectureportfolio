@@ -66,6 +66,14 @@ a {
   line-height: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .error::before,
+  .error-right::before {
+    right: 0;
+    left: initial;
+  }
+}
+
 select option:disabled {
   @apply text-lightGrey opacity-75;
 }
