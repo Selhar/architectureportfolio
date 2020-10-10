@@ -19,3 +19,37 @@ export const HomePage = {
 export const Margin = {
   section: "mb-16",
 };
+
+export const perfis = [
+  {
+    id: "architect",
+    label: "Arquiteto(a)",
+  },
+  {
+    id: "entrepeneur",
+    label: "Construtora/Empreendedor(a)",
+  },
+  {
+    id: "designer",
+    label: "Decorador(a)",
+  },
+];
+
+export const projectType = [
+  {
+    id: "illustrative",
+    label: "Imagem ilustrativa",
+  },
+  {
+    id: "animationmodel",
+    label: "Modelagem em 3d",
+  },
+  {
+    id: "videomodel",
+    label: "Animação/vídeo",
+  },
+  {
+    id: "image",
+    label: "Imagens 360º",
+  },
+];

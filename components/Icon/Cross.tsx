@@ -8,14 +8,14 @@ const Cross = ({ classes }: Cross) => (
     <path
       d="M8 8L22 22"
       stroke="#ffc100"
-      stroke-width="0.3"
-      stroke-miterlimit="20"
+      strokeWidth="0.3"
+      strokeMiterlimit="20"
     />
     <path
       d="M22 8L8 22"
       stroke="#ffc100"
-      stroke-width="0.3"
-      stroke-miterlimit="20"
+      strokeWidth="0.3"
+      strokeMiterlimit="20"
     />
   </svg>
 );

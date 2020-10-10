@@ -30,7 +30,7 @@ const Portfolio = ({ images }: Portfolio) => {
   };
 
   return (
-    <div>
+    <div className="mb-16">
       <div
         className={`${
           visibleCarousel > -1 ? "flex" : "hidden"

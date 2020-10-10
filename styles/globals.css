@@ -40,6 +40,42 @@ a {
   text-decoration: none;
 }
 
+*:focus {
+  @apply outline-none;
+}
+
+.inputField {
+  @apply rounded-md p-4 w-full;
+}
+
+.inputContainer {
+  @apply mb-2 w-full relative;
+}
+
+.error::before {
+  @apply absolute bg-yellow w-8 h-8 text-center text-lightGrey rounded-full transform -translate-y-1/2 top-1/2 -left-10;
+  font-size: 1.5rem;
+  content: "!";
+  line-height: 2rem;
+}
+
+.error-right::before {
+  @apply absolute bg-yellow w-8 h-8 text-center text-lightGrey rounded-full transform -translate-y-1/2 top-1/2 -right-10;
+  font-size: 1.5rem;
+  content: "!";
+  line-height: 2rem;
+}
+
+select option:disabled {
+  @apply text-lightGrey opacity-75;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  @apply text-white opacity-75;
+}
+
 * {
   box-sizing: border-box;
   border: 0;
