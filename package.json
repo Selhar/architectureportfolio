@@ -9,6 +9,7 @@
     "test": "yarn run cypress open"
   },
   "dependencies": {
+    "@types/react-input-mask": "^2.0.5",
     "emailjs-com": "^2.6.3",
     "formik": "^2.1.5",
     "next": "9.5.3",
