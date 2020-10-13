@@ -3,7 +3,7 @@ import { LogoLayout, LogoSizes } from "../utils/enums";
 import { Telefone, Email } from "../utils/constants";
 
 const Footer = () => (
-  <div className="py-16 bg-lightGrey">
+  <div className="py-16 bg-lightGrey" id="contato">
     <div className="font-bold tracking-wider flex justify-center items-center lg:flex-row flex-col">
       <span>{Telefone}</span>
       <Logo

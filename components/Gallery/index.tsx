@@ -38,7 +38,11 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
         direction == Direction.left
           ? " border-l-2 border-b-2 ml-12 left"
           : " border-r-2 border-t-2 mr-12 right"
-      }-0 text-6xl font-hairline z-50 cursor-pointer leading-snug align-middle border-yellow border-solid w-20 h-20 transform rotate-45`}
+      }-0 text-2xl lg:text-6xl font-hairline z-50 
+        cursor-pointer leading-snug align-middle
+        border-yellow border-solid 
+        w-10 h-10 lg:w-20 lg:h-20
+        transform rotate-45`}
     />
   );
 
