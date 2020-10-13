@@ -6,8 +6,15 @@ import { Icons } from "../utils/enums";
 import { Title } from "../Title";
 import Gallery from "../Gallery";
 
+type Image = {
+  "4k": string;
+  "1440p": string;
+  "1080p": string;
+  mobile: string;
+};
+
 type Portfolio = {
-  images: Array<string>;
+  images: Array<Image>;
 };
 
 const Portfolio = ({ images }: Portfolio) => {
@@ -18,13 +25,29 @@ const Portfolio = ({ images }: Portfolio) => {
       <>
         {images.map((image, index) => (
           <div
-            key={image}
+            key={image["1440p"]}
             className={`transition-all duration-500 
               ease-in-out hover:shadow-gallery
               transform hover:scale-105 cursor-pointer`}
             onClick={() => setVisibleCarousel(index)}
           >
-            <img src={image} />
+            <picture>
+              <source
+                media="(min-width: 1024px) and (max-width:2559px)"
+                srcSet={image["1080p"]}
+              />
+              <source
+                media="(min-width: 2560px) and (max-width:4095px)"
+                srcSet={image["1440p"]}
+              />
+              <source media="(min-width:4095px)" srcSet={image["4k"]} />
+              <img
+                className={
+                  "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
+                }
+                src={image.mobile}
+              />
+            </picture>
           </div>
         ))}
       </>

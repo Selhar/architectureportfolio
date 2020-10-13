@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+type Image = {
+  "4k": string;
+  "1440p": string;
+  "1080p": string;
+  mobile: string;
+};
+
 type Carousel = {
-  images: Array<string>;
+  images: Array<Image>;
   galleryMode?: boolean;
 };
 
@@ -23,20 +30,26 @@ const Carousel = ({ images }: Carousel) => {
 
   return (
     <div
-      className={`flex transition duration-500 all ease-in-out transform translate-x-${currentImage}`}
+      className={`flex transition duration-500 
+        all ease-in-out transform translate-x-${currentImage}`}
     >
       {images.map((image) => (
-        <div key={image} className={"flex-shrink-0 w-full m-auto"}>
+        <div key={image.mobile} className={"flex-shrink-0 w-full m-auto"}>
           <picture>
             <source
-              media="(max-width:1024px)"
-              srcSet={`http://wonderfulengineering.com/wp-content/uploads/2016/02/mobile-wallpaper-3.jpg`}
+              media="(min-width: 1024px) and (max-width:2559px)"
+              srcSet={image["1080p"]}
             />
+            <source
+              media="(min-width: 2560px) and (max-width:4095px)"
+              srcSet={image["1440p"]}
+            />
+            <source media="(min-width:4095px)" srcSet={image["4k"]} />
             <img
               className={
                 "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
               }
-              src={image}
+              src={image.mobile}
             />
           </picture>
         </div>

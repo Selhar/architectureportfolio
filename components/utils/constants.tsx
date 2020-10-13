@@ -14,8 +14,31 @@ export const PortfolioPage = {
   title: "portfólio",
 };
 
-export const HomePage = {
-  images: {},
+export const CarouselImages = {
+  1: {
+    "4k": "/portfolio/1-4k.jpg",
+    "1440p": "/portfolio/1-1440p.jpg",
+    "1080p": "/portfolio/1-1080p.jpg",
+    mobile: "/portfolio/1-mobile.jpg",
+  },
+};
+
+export const GalleryImages = {
+  1: {
+    "4k": "/portfolio/1-4k.jpg",
+    "1440p": "/portfolio/1-1440p.jpg",
+    "1080p": "/portfolio/1-1080p.jpg",
+    mobile: "/portfolio/1-mobile.jpg",
+  },
+};
+
+export const PortfolioImages = {
+  1: {
+    "4k": "/portfolio/1-4k.jpg",
+    "1440p": "/portfolio/1-1440p.jpg",
+    "1080p": "/portfolio/1-1080p.jpg",
+    mobile: "/portfolio/1-mobile.jpg",
+  },
 };
 
 export const Margin = {

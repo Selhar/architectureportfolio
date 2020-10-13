@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+type Image = {
+  "4k": string;
+  "1440p": string;
+  "1080p": string;
+  mobile: string;
+};
+
 type Gallery = {
-  images: Array<string>;
+  images: Array<Image>;
   currentImageIndex: number;
 };
 
@@ -53,7 +60,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
       >
         {images.map((image) => (
           <div
-            key={"gallery-" + image}
+            key={"gallery-" + image["4k"]}
             className={"flex-shrink-0 relative w-full m-auto"}
           >
             <div
@@ -70,14 +77,19 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
             </div>
             <picture>
               <source
-                media="(max-width:1024px)"
-                srcSet={`http://wonderfulengineering.com/wp-content/uploads/2016/02/mobile-wallpaper-3.jpg`}
+                media="(min-width: 1024px) and (max-width:2559px)"
+                srcSet={image["1080p"]}
               />
+              <source
+                media="(min-width: 2560px) and (max-width:4095px)"
+                srcSet={image["1440p"]}
+              />
+              <source media="(min-width:4095px)" srcSet={image["4k"]} />
               <img
                 className={
                   "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
                 }
-                src={image}
+                src={image.mobile}
               />
             </picture>
           </div>
@@ -94,7 +106,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
               key={"imagelistitem-" + index}
               onClick={() => setCurrentImage(index * 100)}
               className={"flex-grow flex-shrink w-0"}
-              src={image}
+              src={image.mobile}
             />
           ))}
         </div>

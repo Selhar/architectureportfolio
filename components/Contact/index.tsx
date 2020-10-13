@@ -33,6 +33,7 @@ const SignupSchema = Yup.object().shape({
 
 const Contact = () => {
   const [submitText, setSubmitText] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const initialValues: ContactForm = {
     name: "",
     email: "",
@@ -43,58 +44,74 @@ const Contact = () => {
   };
 
   return (
-    <div id="orcamento" className={"max-w-2xl mx-auto my-0 mb-16"}>
-      <Title classes={"text-center"} text="Orçamento" />
-      <Formik
-        initialValues={initialValues}
-        validationSchema={SignupSchema}
-        onSubmit={(values) => {
-          emailjs.send(
-            "gmail",
-            "contato",
-            values,
-            "user_FNftmIgR960O1Oawh9AAM"
-          );
-          setSubmitText(
-            "Obrigada pela mensagem, em breve entraremos em contato!"
-          );
-        }}
+    <>
+      <div
+        onClick={() => setModalOpen(!modalOpen)}
+        className={`bg-black bg-opacity-75 w-screen 
+          h-screen z-50 align-middle
+          items-center fixed top-0
+          justify-center ${modalOpen ? "hidden" : "flex"}`}
       >
-        <Form className={"flex flex-col "}>
-          <TextField placeholder="Nome" name="name" />
-          <TextField placeholder="E-mail" name="email" type="email" />
-          <div className="flex flex-col justify-between lg:flex-row">
-            <SelectField
-              name="perfil"
-              options={perfis}
-              placeholder="Escolha seu perfil"
-              classes="mr-2"
+        <span className="p-4 bg-yellow rounded-md text-black bg-opacity-100">
+          Obrigada pela mensagem! Em breve entraremos em contato.
+        </span>
+      </div>
+      <div id="orcamento" className={"max-w-2xl mx-auto my-0 mb-16"}>
+        <Title classes={"text-center"} text="Orçamento" />
+        <Formik
+          initialValues={initialValues}
+          validationSchema={SignupSchema}
+          onSubmit={(values) => {
+            emailjs.send(
+              "gmail",
+              "contato",
+              values,
+              "user_FNftmIgR960O1Oawh9AAM"
+            );
+            setSubmitText(
+              "Obrigada pela mensagem, em breve entraremos em contato!"
+            );
+          }}
+        >
+          <Form className={"flex flex-col "}>
+            <TextField placeholder="Nome" name="name" />
+            <TextField placeholder="E-mail" name="email" type="email" />
+            <div className="flex flex-col justify-between lg:flex-row">
+              <SelectField
+                name="perfil"
+                options={perfis}
+                placeholder="Escolha seu perfil"
+                classes="mr-2"
+              />
+              <SelectField
+                name="projectType"
+                options={projectType}
+                placeholder="Escolha seu tipo de projeto"
+                errorClasses="error-right"
+              />
+            </div>
+            <TextField
+              placeholder="Telefone"
+              name="phone"
+              mask="(99) 99999-9999"
             />
-            <SelectField
-              name="projectType"
-              options={projectType}
-              placeholder="Escolha seu tipo de projeto"
-              errorClasses="error-right"
+            <TextAreaField
+              placeholder="Fale um pouquinho sobre o projeto!"
+              name="description"
             />
-          </div>
-          <TextField
-            placeholder="Telefone"
-            name="phone"
-            mask="(99) 99999-9999"
-          />
-          <TextAreaField
-            placeholder="Fale um pouquinho sobre o projeto!"
-            name="description"
-          />
-          <button
-            className={"mt-2 w-40 m-auto p-2 text-center rounded-md bg-orange"}
-            type="submit"
-          >
-            Enviar proposta
-          </button>
-        </Form>
-      </Formik>
-    </div>
+            <button
+              className={
+                "mt-2 w-40 m-auto p-2 text-center rounded-md bg-orange"
+              }
+              type="submit"
+              onClick={() => setModalOpen(!modalOpen)}
+            >
+              Enviar proposta
+            </button>
+          </Form>
+        </Formik>
+      </div>
+    </>
   );
 };
 
