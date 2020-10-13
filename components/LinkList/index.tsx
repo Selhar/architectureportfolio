@@ -6,6 +6,7 @@ type LinkList = {
   itemClasses?: string;
   type: Number;
   target?: string;
+  onClick?: Function;
 };
 
 type Item = {
@@ -21,6 +22,7 @@ const LinkedList = ({
   itemClasses,
   type,
   target,
+  onClick = () => {},
 }: LinkList) => (
   <ul className={"flex" + " " + classes}>
     {items.map((item) => (
@@ -33,6 +35,7 @@ const LinkedList = ({
         type={type}
         classes={itemClasses}
         target={target}
+        onClick={onClick}
       />
     ))}
   </ul>

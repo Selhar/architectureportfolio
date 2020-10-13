@@ -13,7 +13,7 @@ type Mask = {
 };
 const CustomInputComponent = ({
   field,
-  mask,
+  mask = "",
   form: { touched, errors },
   ...props
 }: FieldProps & Mask) => (

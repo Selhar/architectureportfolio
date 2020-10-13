@@ -22,7 +22,7 @@ export const contato = {
 export const legendaLogo = "Logo TSModelagem3D";
 
 export const headerMenu = [
-  { name: "home", url: "#home" },
+  { name: "home", url: "#" },
   { name: "sobre", url: "#sobre" },
   { name: "portfolio", url: "#portfolio" },
   { name: "orçamento", url: "#orcamento" },

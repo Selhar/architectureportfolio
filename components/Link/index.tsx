@@ -11,6 +11,7 @@ type Link = {
   iconName?: Number;
   itemClasses?: string;
   target?: string;
+  onClick?: Function;
 };
 
 const Link = ({
@@ -22,6 +23,7 @@ const Link = ({
   iconName = 999,
   itemClasses,
   target = "",
+  onClick = () => {},
 }: Link) => {
   const renderType = () => {
     switch (type) {
@@ -37,7 +39,12 @@ const Link = ({
   };
 
   return (
-    <a href={url} className={classes} target={target}>
+    <a
+      href={url}
+      className={classes}
+      target={target}
+      onClick={() => onClick(false)}
+    >
       {renderType()}
     </a>
   );

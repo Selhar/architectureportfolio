@@ -10,8 +10,6 @@ export const Telefone = "+55 (71) 9 9901-9845";
 
 export const Email = "tsmodelagem3d@gmail.com";
 
-export const Breakpoint = "lg";
-
 export const PortfolioPage = {
   title: "portfólio",
 };
