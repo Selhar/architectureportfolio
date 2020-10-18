@@ -16,10 +16,28 @@ export const PortfolioPage = {
 
 export const CarouselImages = {
   1: {
-    "4k": "/portfolio/1-4k.jpg",
-    "1440p": "/portfolio/1-1440p.jpg",
-    "1080p": "/portfolio/1-1080p.jpg",
-    mobile: "/portfolio/1-mobile.jpg",
+    name: "banheiro",
+    description: "descrição",
+    "2160p": "/portfolio/banheiro/2160p.jpg",
+    "1440p": "/portfolio/banheiro/1440p.jpg",
+    "1080p": "/portfolio/banheiro/1080p.jpg",
+    mobile: "/portfolio/banheiro/mobile.jpg",
+  },
+  2: {
+    name: "casabranca",
+    description: "descrição",
+    "2160p": "/portfolio/casa branca/2160p.jpg",
+    "1440p": "/portfolio/casa branca/1440p.jpg",
+    "1080p": "/portfolio/casa branca/1080p.jpg",
+    mobile: "/portfolio/casa branca/mobile.jpg",
+  },
+  3: {
+    name: "emparboreo",
+    description: "descrição",
+    "2160p": "/portfolio/empreendimento arboreo/2160p.jpg",
+    "1440p": "/portfolio/empreendimento arboreo/1440p.jpg",
+    "1080p": "/portfolio/empreendimento arboreo/1080p.jpg",
+    mobile: "/portfolio/empreendimento arboreo/mobile.jpg",
   },
 };
 
