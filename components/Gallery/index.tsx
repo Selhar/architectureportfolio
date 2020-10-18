@@ -35,7 +35,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
     isUpperBound() && setCurrentImage(currentImage + 100);
   };
 
-  const lastImage = () => {
+  const previousImage = () => {
     isLowerBound() && setCurrentImage(currentImage - 100);
   };
 
@@ -43,8 +43,8 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
     <div
       className={`absolute top-1/2 ${
         direction == Direction.left
-          ? " border-l-2 border-b-2 ml-12 left"
-          : " border-r-2 border-t-2 mr-12 right"
+          ? " border-l-2 border-b-2 ml-4 lg:ml-12 left"
+          : " border-r-2 border-t-2 mr-4 lg:mr-12 right"
       }-0 text-2xl lg:text-6xl font-hairline z-50 
         cursor-pointer leading-snug align-middle
         border-yellow border-solid 
@@ -64,7 +64,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
             className={"flex-shrink-0 relative w-full m-auto"}
           >
             <div
-              onClick={lastImage}
+              onClick={previousImage}
               className={`${isLowerBound() ? "block" : "hidden"}`}
             >
               <Arrow direction={Direction.left} />
@@ -74,6 +74,19 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
               className={`${isUpperBound() ? "block" : "hidden"}`}
             >
               <Arrow direction={Direction.right} />
+            </div>
+            <div
+              className={
+                "bottom-0 right-1/2 transform translate-x-1/2 absolute mb-4"
+              }
+            >
+              <span
+                className={
+                  "bg-black bg-opacity-75 p-2 rounded-md whitespace-no-wrap"
+                }
+              >
+                Descrição do projeto
+              </span>
             </div>
             <picture>
               <source
@@ -94,22 +107,6 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
             </picture>
           </div>
         ))}
-      </div>
-      <div
-        className={
-          "absolute bottom-0 right-1/2 transform translate-x-1/2 w-full h-24 bg-black overflow-hidden opacity-0 hover:opacity-100 transition-all duration-500 ease-out"
-        }
-      >
-        <div className={"flex flex-row "}>
-          {images.map((image, index) => (
-            <img
-              key={"imagelistitem-" + index}
-              onClick={() => setCurrentImage(index * 100)}
-              className={"flex-grow flex-shrink w-0"}
-              src={image.mobile}
-            />
-          ))}
-        </div>
       </div>
     </>
   );
