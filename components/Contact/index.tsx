@@ -1,5 +1,5 @@
-import React, { useState, InputHTMLAttributes } from "react";
-import { Formik, Form, Field } from "formik";
+import React, { useState } from "react";
+import { Formik, Form } from "formik";
 import { Title } from "../Title";
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
@@ -32,7 +32,6 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Contact = () => {
-  const [submitText, setSubmitText] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const initialValues: ContactForm = {
     name: "",
@@ -42,7 +41,6 @@ const Contact = () => {
     phone: "",
     description: "",
   };
-
   return (
     <>
       <div
@@ -50,7 +48,7 @@ const Contact = () => {
         className={`bg-black bg-opacity-75 w-screen 
           h-screen z-50 align-middle
           items-center fixed top-0
-          justify-center ${modalOpen ? "hidden" : "flex"}`}
+          justify-center ${modalOpen ? "flex" : "hidden"}`}
       >
         <span className="p-4 bg-yellow rounded-md text-black bg-opacity-100">
           Obrigada pela mensagem! Em breve entraremos em contato.
@@ -61,16 +59,15 @@ const Contact = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={SignupSchema}
-          onSubmit={(values) => {
+          onSubmit={(values, actions) => {
             emailjs.send(
               "gmail",
               "contato",
               values,
               "user_FNftmIgR960O1Oawh9AAM"
             );
-            setSubmitText(
-              "Obrigada pela mensagem, em breve entraremos em contato!"
-            );
+            setModalOpen(!modalOpen);
+            actions.resetForm();
           }}
         >
           <Form className={"flex flex-col "}>
@@ -104,7 +101,6 @@ const Contact = () => {
                 "mt-2 w-40 m-auto p-2 text-center rounded-md bg-orange"
               }
               type="submit"
-              onClick={() => setModalOpen(!modalOpen)}
             >
               Enviar proposta
             </button>
