@@ -29,23 +29,17 @@ const Portfolio = ({ images }: Portfolio) => {
             className={`transition-all duration-500 
               ease-in-out hover:shadow-gallery
               transform hover:scale-105 cursor-pointer`}
-            onClick={() => setVisibleCarousel(index)}
+            onClick={() => {
+              setVisibleCarousel(index);
+              document.body.style.overflowY = "hidden";
+            }}
           >
             <picture>
-              <source
-                media="(min-width: 1024px) and (max-width:2559px)"
-                srcSet={image["1080p"]}
-              />
-              <source
-                media="(min-width: 2560px) and (max-width:4095px)"
-                srcSet={image["1440p"]}
-              />
-              <source media="(min-width:4095px)" srcSet={image["4k"]} />
               <img
                 className={
                   "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
                 }
-                src={image.mobile}
+                src={image["1080p"]}
               />
             </picture>
           </div>
@@ -65,7 +59,10 @@ const Portfolio = ({ images }: Portfolio) => {
         <div
           className={`fixed z-50 top-0 right-0 uppercase p-4 
             cursor-pointer leading-tight rounded-full`}
-          onClick={() => setVisibleCarousel(-1)}
+          onClick={() => {
+            setVisibleCarousel(-1);
+            document.body.style.overflowY = "visible";
+          }}
         >
           <Icon iconName={Icons.cross} classes="w-10 h-10 lg:w-16 lg:h-16" />
         </div>
