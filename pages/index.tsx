@@ -16,7 +16,7 @@ export default function IndexPage() {
         <title>Modelagem e rederização de objetos 3D</title>
         <meta
           property="og:title"
-          content="Modelagem e rederização de objetos 3D"
+          content="Thaís Sacramento: Modelagem e rederização de objetos 3D"
           key="title"
         />
       </Head>

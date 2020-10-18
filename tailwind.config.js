@@ -3,7 +3,15 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: [
+      "./components/**/*.{js,ts,jsx,tsx}",
+      "./pages/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      defaultExtractor: content => content.match(/[A-Za-z0-9-_:/%]+/g) || [],
+    },
+  },
   theme: {
     fill: (theme) => ({
       yellow: theme("colors.yellow"),

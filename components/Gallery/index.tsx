@@ -16,12 +16,40 @@ type ArrowDirection = {
   direction: Direction;
 };
 
+const processCurrentImageClass = (value: number) => {
+  switch(value) {
+    case 0:
+      return "translate-x-0";
+    case 100:
+      return "translate-x-100";
+    case 200:
+      return "translate-x-200";
+    case 300:
+      return "translate-x-300";
+    case 400:
+      return "translate-x-400";
+    case 500:
+      return "translate-x-500";
+    case 600:
+      return "translate-x-600";
+  }
+}
+
 const Gallery = ({ images, currentImageIndex }: Gallery) => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentImageClass, setCurrentImageClass] = useState(processCurrentImageClass(currentImage));
+  const AUTOSCROLLING_DURATION = 5000;
 
   useEffect(() => {
-    setCurrentImage(currentImageIndex);
-  }, [currentImageIndex]);
+    let timer = setInterval(
+      () =>
+        {setCurrentImage(
+          currentImage == images.length * 100 - 100 ? 0 : currentImage + 100
+        ), setCurrentImageClass("translate-x-"+currentImage)},
+      AUTOSCROLLING_DURATION
+    );
+    return () => clearInterval(timer);
+  });
 
   const isUpperBound = () => currentImage < (images.length - 1) * 100;
   const isLowerBound = () => currentImage > 0;
