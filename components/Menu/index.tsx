@@ -43,8 +43,10 @@ const Menu = () => {
         <LinkList
           items={contato.socialNetworks}
           type={LinkTypes.Icon}
-          classes={`lg:flex hidden col-row`}
-          itemClasses="fill-white hover:fill-yellow ml-4 w-4"
+          classes={`lg:flex lg:relative lg:transform-none lg:translate-none
+          lg:right-auto
+          fixed col-row right-1/2 transform translate-x-1/2`}
+          itemClasses="lg:fill-white lg:hover:fill-yellow fill-yellow ml-4 w-4"
           target="_newtarget"
         />
         <div onClick={() => setOpen(!open)}>
