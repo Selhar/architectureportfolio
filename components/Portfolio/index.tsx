@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 
-import { PortfolioPage } from "../utils/constants";
+import { PortfolioPage, CarouselImage } from "../utils/constants";
 import Icon from "../Icon";
 import { Icons } from "../utils/enums";
 import { Title } from "../Title";
 import Gallery from "../Gallery";
 
-type Image = {
-  "4k": string;
-  "1440p": string;
-  "1080p": string;
-  mobile: string;
-};
-
 type Portfolio = {
-  images: Array<Image>;
+  images: Array<CarouselImage>;
 };
 
 const Portfolio = ({ images }: Portfolio) => {
@@ -25,7 +18,7 @@ const Portfolio = ({ images }: Portfolio) => {
       <>
         {images.map((image, index) => (
           <div
-            key={image["1440p"]}
+            key={"portfolio-" + image.name}
             className={`transition-all duration-500 
               ease-in-out hover:shadow-gallery
               transform hover:scale-105 cursor-pointer`}

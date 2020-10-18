@@ -9,7 +9,6 @@ import { headerMenu, contato } from "../../data";
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
   return (
     <>
       <div

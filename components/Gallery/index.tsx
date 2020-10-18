@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-type Image = {
-  "4k": string;
-  "1440p": string;
-  "1080p": string;
-  mobile: string;
-};
+import { CarouselImage } from "../utils/constants";
 
 type Gallery = {
-  images: Array<Image>;
+  images: Array<CarouselImage>;
   currentImageIndex: number;
 };
 
@@ -60,7 +55,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
       >
         {images.map((image) => (
           <div
-            key={"gallery-" + image["4k"]}
+            key={"gallery-" + image.name}
             className={"flex-shrink-0 relative w-full m-auto"}
           >
             <div
@@ -85,7 +80,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
                   "bg-black bg-opacity-75 p-2 rounded-md whitespace-no-wrap"
                 }
               >
-                Descrição do projeto
+                {image.description}
               </span>
             </div>
             <picture>
@@ -97,7 +92,7 @@ const Gallery = ({ images, currentImageIndex }: Gallery) => {
                 media="(min-width: 2560px) and (max-width:4095px)"
                 srcSet={image["1440p"]}
               />
-              <source media="(min-width:4095px)" srcSet={image["4k"]} />
+              <source media="(min-width:4095px)" srcSet={image["2160p"]} />
               <img
                 className={
                   "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "

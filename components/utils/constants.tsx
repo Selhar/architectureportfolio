@@ -14,6 +14,15 @@ export const PortfolioPage = {
   title: "portfólio",
 };
 
+export type CarouselImage = {
+  name: string;
+  description: string;
+  "2160p": string;
+  "1440p": string;
+  "1080p": string;
+  mobile: string;
+};
+
 export const CarouselImages = {
   1: {
     name: "banheiro",
@@ -26,36 +35,64 @@ export const CarouselImages = {
   2: {
     name: "casabranca",
     description: "descrição",
-    "2160p": "/portfolio/casa branca/2160p.jpg",
-    "1440p": "/portfolio/casa branca/1440p.jpg",
-    "1080p": "/portfolio/casa branca/1080p.jpg",
-    mobile: "/portfolio/casa branca/mobile.jpg",
+    "2160p": "/portfolio/casabranca/2160p.jpg",
+    "1440p": "/portfolio/casabranca/1440p.jpg",
+    "1080p": "/portfolio/casabranca/1080p.jpg",
+    mobile: "/portfolio/casabranca/mobile.jpg",
   },
   3: {
     name: "emparboreo",
     description: "descrição",
-    "2160p": "/portfolio/empreendimento arboreo/2160p.jpg",
-    "1440p": "/portfolio/empreendimento arboreo/1440p.jpg",
-    "1080p": "/portfolio/empreendimento arboreo/1080p.jpg",
-    mobile: "/portfolio/empreendimento arboreo/mobile.jpg",
-  },
-};
-
-export const GalleryImages = {
-  1: {
-    "4k": "/portfolio/1-4k.jpg",
-    "1440p": "/portfolio/1-1440p.jpg",
-    "1080p": "/portfolio/1-1080p.jpg",
-    mobile: "/portfolio/1-mobile.jpg",
+    "2160p": "/portfolio/empreendimentoarboreo/2160p.jpg",
+    "1440p": "/portfolio/empreendimentoarboreo/1440p.jpg",
+    "1080p": "/portfolio/empreendimentoarboreo/1080p.jpg",
+    mobile: "/portfolio/empreendimentoarboreo/mobile.jpg",
   },
 };
 
 export const PortfolioImages = {
   1: {
-    "4k": "/portfolio/1-4k.jpg",
-    "1440p": "/portfolio/1-1440p.jpg",
-    "1080p": "/portfolio/1-1080p.jpg",
-    mobile: "/portfolio/1-mobile.jpg",
+    name: "banheiro",
+    description: "descrição",
+    "2160p": "/portfolio/banheiro/2160p.jpg",
+    "1440p": "/portfolio/banheiro/1440p.jpg",
+    "1080p": "/portfolio/banheiro/1080p.jpg",
+    mobile: "/portfolio/banheiro/mobile.jpg",
+  },
+  2: {
+    name: "casabranca",
+    description: "descrição",
+    "2160p": "/portfolio/casabranca/2160p.jpg",
+    "1440p": "/portfolio/casabranca/1440p.jpg",
+    "1080p": "/portfolio/casabranca/1080p.jpg",
+    mobile: "/portfolio/casabranca/mobile.jpg",
+  },
+  3: {
+    name: "emparboreo",
+    description: "descrição",
+    "2160p": "/portfolio/empreendimentoarboreo/2160p.jpg",
+    "1440p": "/portfolio/empreendimentoarboreo/1440p.jpg",
+    "1080p": "/portfolio/empreendimentoarboreo/1080p.jpg",
+    mobile: "/portfolio/empreendimentoarboreo/mobile.jpg",
+  },
+};
+
+export const AboutImages = {
+  1: {
+    name: "casabranca",
+    description: "descrição",
+    "2160p": "/portfolio/casabranca/2160p.jpg",
+    "1440p": "/portfolio/casabranca/1440p.jpg",
+    "1080p": "/portfolio/casabranca/1080p.jpg",
+    mobile: "/portfolio/casabranca/mobile.jpg",
+  },
+  2: {
+    name: "emparboreo",
+    description: "descrição",
+    "2160p": "/portfolio/empreendimentoarboreo/2160p.jpg",
+    "1440p": "/portfolio/empreendimentoarboreo/1440p.jpg",
+    "1080p": "/portfolio/empreendimentoarboreo/1080p.jpg",
+    mobile: "/portfolio/empreendimentoarboreo/mobile.jpg",
   },
 };
 

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-type Image = {
-  "4k": string;
-  "1440p": string;
-  "1080p": string;
-  mobile: string;
-};
+import { CarouselImage } from "../utils/constants";
 
 type Carousel = {
-  images: Array<Image>;
+  images: Array<CarouselImage>;
   galleryMode?: boolean;
 };
 
@@ -34,7 +29,10 @@ const Carousel = ({ images }: Carousel) => {
         all ease-in-out transform translate-x-${currentImage}`}
     >
       {images.map((image) => (
-        <div key={image.mobile} className={"flex-shrink-0 w-full m-auto"}>
+        <div
+          key={"carousel-" + image.name}
+          className={"flex-shrink-0 w-full m-auto"}
+        >
           <picture>
             <source
               media="(min-width: 1024px) and (max-width:2559px)"
@@ -44,7 +42,7 @@ const Carousel = ({ images }: Carousel) => {
               media="(min-width: 2560px) and (max-width:4095px)"
               srcSet={image["1440p"]}
             />
-            <source media="(min-width:4095px)" srcSet={image["4k"]} />
+            <source media="(min-width:4095px)" srcSet={image["2160p"]} />
             <img
               className={
                 "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
