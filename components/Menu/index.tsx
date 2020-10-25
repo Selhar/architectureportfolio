@@ -45,7 +45,7 @@ const Menu = () => {
           classes={`lg:flex lg:relative lg:transform-none lg:translate-none
           lg:right-auto
           fixed col-row right-1/2 transform translate-x-1/2`}
-          itemClasses="lg:fill-white lg:hover:fill-yellow fill-yellow ml-4 w-4"
+          itemClasses="lg:fill-white lg:hover:fill-yellow fill-yellow ml-6 w-5 lg:ml-4 lg:w-4"
           target="_newtarget"
         />
         <div onClick={() => setOpen(!open)}>
