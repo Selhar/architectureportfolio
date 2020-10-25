@@ -7,28 +7,34 @@ import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import { CarouselImages, PortfolioImages } from "../components/utils/constants";
+import { PortfolioImages } from "../components/utils/constants";
 
 export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>Modelagem e rederização de objetos 3D</title>
+        <title>TSmodelagem3d: Modelagem, animação e render 3D</title>
         <meta
           property="og:title"
-          content="Thaís Sacramento: Modelagem e rederização de objetos 3D"
+          content="TSmodelagem3d: Modelagem, animação e render 3D"
           key="title"
         />
       </Head>
       <Menu />
       <Section>
         <Carousel
-          images={[CarouselImages[1], CarouselImages[2], CarouselImages[3]]}
+          images={[PortfolioImages[1], PortfolioImages[2], PortfolioImages[7], PortfolioImages[14]]}
         />
       </Section>
-      <About />
+      <About images={{1:PortfolioImages[8], 2:PortfolioImages[5]}}/>
       <Portfolio
-        images={[PortfolioImages[1], PortfolioImages[2], PortfolioImages[3]]}
+        images={[PortfolioImages[1], PortfolioImages[2], PortfolioImages[3],
+          PortfolioImages[4], PortfolioImages[5], PortfolioImages[6],
+          PortfolioImages[7], PortfolioImages[8], PortfolioImages[9],
+          PortfolioImages[10], PortfolioImages[11], PortfolioImages[12],
+          PortfolioImages[13], PortfolioImages[14], PortfolioImages[15],
+          PortfolioImages[16], PortfolioImages[17], PortfolioImages[18],
+        PortfolioImages[19]]}
       />
       <Contact />
       <Footer />
