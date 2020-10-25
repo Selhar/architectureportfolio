@@ -85,7 +85,15 @@ select option:disabled {
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
-  @apply text-white opacity-75;
+  color: white;
+  opacity: 0.75;
+}
+
+input,
+select,
+textarea {
+  @apply font-body text-white;
+  font-size: 100%;
 }
 
 * {
