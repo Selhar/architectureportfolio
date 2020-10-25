@@ -1,138 +1,101 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { CarouselImage } from "../utils/constants";
-
-type Gallery = {
-  images: Array<CarouselImage>;
-  currentImageIndex: number;
-};
+import Icon from "../Icon"
+import Splash from "../Splash"
+import { Icons } from "../utils/enums"
+import { Image } from "../utils/types"
+import { orderImages } from "../utils/funcs"
 
 enum Direction {
   left,
   right,
 }
 
-type ArrowDirection = {
+type setDirection = {
   direction: Direction;
 };
 
-const processCurrentImageClass = (value: number) => {
-  switch(value) {
-    case 0:
-      return "translate-x-0";
-    case 100:
-      return "translate-x-100";
-    case 200:
-      return "translate-x-200";
-    case 300:
-      return "translate-x-300";
-    case 400:
-      return "translate-x-400";
-    case 500:
-      return "translate-x-500";
-    case 600:
-      return "translate-x-600";
+const Arrow = ({ direction }: setDirection) => (
+  <div
+    className={`absolute top-1/2 ${
+      direction == Direction.left
+        ? " border-l-2 border-b-2 ml-4 lg:ml-12 left"
+        : " border-r-2 border-t-2 mr-4 lg:mr-12 right"
+    }-0 text-2xl lg:text-6xl font-hairline z-50 
+      cursor-pointer leading-snug align-middle
+      border-yellow border-solid 
+      w-10 h-10 lg:w-20 lg:h-20
+      transform rotate-45`}
+  />
+);
+
+type Gallery = {
+  images: Array<Image>,
+  closeFunction: Function,
+  initialIndex?: number,
+}
+
+const proccessCurrentImage = (
+  direction: Direction,
+  currentImage: number,
+  isLastImage: boolean,
+  isFirstImage: boolean) => {
+  if (direction == Direction.left && !isFirstImage) {
+    return currentImage - 1;
+  } else if(direction == Direction.right && !isLastImage) {
+    return currentImage + 1;
+  } else {
+    return 0;
   }
 }
 
-const Gallery = ({ images, currentImageIndex }: Gallery) => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [currentImageClass, setCurrentImageClass] = useState(processCurrentImageClass(currentImage));
-  const AUTOSCROLLING_DURATION = 5000;
-
-  useEffect(() => {
-    let timer = setInterval(
-      () =>
-        {setCurrentImage(
-          currentImage == images.length * 100 - 100 ? 0 : currentImage + 100
-        ), setCurrentImageClass("translate-x-"+currentImage)},
-      AUTOSCROLLING_DURATION
-    );
-    return () => clearInterval(timer);
-  });
-
-  const isUpperBound = () => currentImage < (images.length - 1) * 100;
-  const isLowerBound = () => currentImage > 0;
-
-  const nextImage = () => {
-    isUpperBound() && setCurrentImage(currentImage + 100);
-  };
-
-  const previousImage = () => {
-    isLowerBound() && setCurrentImage(currentImage - 100);
-  };
-
-  const Arrow = ({ direction }: ArrowDirection) => (
-    <div
-      className={`absolute top-1/2 ${
-        direction == Direction.left
-          ? " border-l-2 border-b-2 ml-4 lg:ml-12 left"
-          : " border-r-2 border-t-2 mr-4 lg:mr-12 right"
-      }-0 text-2xl lg:text-6xl font-hairline z-50 
-        cursor-pointer leading-snug align-middle
-        border-yellow border-solid 
-        w-10 h-10 lg:w-20 lg:h-20
-        transform rotate-45`}
-    />
-  );
-
+const Gallery = ({ images, closeFunction, initialIndex = 0 }: Gallery) => {
+  const [currentImage, setcurrentImage] = useState(initialIndex);
+  const [isTransitioning, setIsTransitioning] = useState("transform -translate-x-100");
+  let isLastImage = currentImage + 1 >= images.length;
+  let isFirstImage = currentImage == 0;
+  let transitionImage = ({direction}: setDirection) => {
+    setIsTransitioning(`transition-transform duration-500 
+      ease-carousel transform ${
+        direction == Direction.left ? "translate-x-0" : "-translate-x-200"
+      }`);
+    setTimeout(() => {
+      setcurrentImage(proccessCurrentImage(direction, currentImage, isLastImage, isFirstImage));
+      setIsTransitioning("transform -translate-x-100");
+    }, 500);
+  }
+  
   return (
-    <>
-      <div
-        className={`flex transition duration-500 all ease-in-out transform translate-x-${currentImage}`}
+    <div className="fixed top-0 bg-black w-screen h-screen z-50">
+      <div className="right-0 fixed p-4 mr-4 z-50" onClick={() => closeFunction(false)}>
+        <Icon
+          iconName={Icons.cross}
+          classes="w-10 h-10 lg:w-16 lg:h-16 cursor-pointer" />
+      </div>
+      <div className={`fixed top-1/2 left-0 p-4 ml-4 z-50 ${isFirstImage ? "hidden" : "block"}`}
+        onClick={() => transitionImage({ direction: Direction.left })}
       >
-        {images.map((image) => (
-          <div
-            key={"gallery-" + image.name}
-            className={"flex-shrink-0 relative w-full m-auto"}
-          >
-            <div
-              onClick={previousImage}
-              className={`${isLowerBound() ? "block" : "hidden"}`}
-            >
-              <Arrow direction={Direction.left} />
-            </div>
-            <div
-              onClick={nextImage}
-              className={`${isUpperBound() ? "block" : "hidden"}`}
-            >
-              <Arrow direction={Direction.right} />
-            </div>
-            <div
-              className={
-                "bottom-0 right-1/2 transform translate-x-1/2 absolute mb-4"
-              }
-            >
-              <span
-                className={
-                  "bg-black bg-opacity-75 p-2 rounded-md whitespace-no-wrap"
-                }
-              >
-                {image.description}
-              </span>
-            </div>
-            <picture>
-              <source
-                media="(min-width: 1024px) and (max-width:2559px)"
-                srcSet={image["1080p"]}
-              />
-              <source
-                media="(min-width: 2560px) and (max-width:4095px)"
-                srcSet={image["1440p"]}
-              />
-              <source media="(min-width:4095px)" srcSet={image["2160p"]} />
-              <img
-                className={
-                  "flex-grow-0 flex-shrink-0 max-w-screen w-full max-w-screen h-auto max-h-screen m-auto "
-                }
-                src={image.mobile}
-              />
-            </picture>
-          </div>
+        <Arrow direction={Direction.left} />
+      </div>
+      <div className={`fixed top-1/2 right-0 p-4 mr-4 z-50 ${isLastImage ? "hidden" : "block"}`}
+        onClick={() => transitionImage({ direction: Direction.right })}
+      >
+        <Arrow direction={Direction.right} />
+      </div>
+      <div className={`flex ${isTransitioning}`}>
+        {images.map((image, index) => (
+          image.mobile &&
+          <Splash image={image}
+            classes={`flex-shrink-0 ${orderImages(index, currentImage, isLastImage, images.length)}` }
+            />
         ))}
       </div>
-    </>
-  );
+    </div>
+  )
 };
 
 export default Gallery;
+
+
+
+
