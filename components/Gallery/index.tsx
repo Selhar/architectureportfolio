@@ -84,7 +84,6 @@ const Gallery = ({ images, closeFunction, initialIndex = 0 }: Gallery) => {
       </div>
       <div className={`flex ${isTransitioning}`}>
         {images.map((image, index) => (
-          image.mobile &&
           <Splash image={image}
             classes={`flex-shrink-0 ${orderImages(index, currentImage, isLastImage, images.length)}` }
             />
