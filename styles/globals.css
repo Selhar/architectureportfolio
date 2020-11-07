@@ -4,19 +4,19 @@
 @font-face {
   font-family: "Geogrotesque";
   font-weight: 400;
-  src: url("/fonts/Geogtq-Md.otf");
+  src: url("../public/fonts/Geogtq-Md.otf");
 }
 
 @font-face {
   font-family: "Sensation Regular";
   font-weight: 400;
-  src: url("/fonts/sansation_regular.ttf");
+  src: url("../public/fonts/sansation_regular.ttf");
 }
 
 @font-face {
   font-family: "Sensation Bold";
   font-weight: 400;
-  src: url("/fonts/sansation_bold.ttf");
+  src: url("../public/fonts/sansation_bold.ttf");
 }
 
 /* Start purging... */
