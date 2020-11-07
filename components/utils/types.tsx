@@ -4,6 +4,6 @@ export type Image = {
   "2160p": string;
   "1440p": string;
   "1080p": string;
-  mobile?: string;
+  mobile: string;
   thumbnail: string;
 };

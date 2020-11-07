@@ -33,8 +33,7 @@ export default function IndexPage() {
           PortfolioImages[7], PortfolioImages[8], PortfolioImages[9],
           PortfolioImages[10], PortfolioImages[11], PortfolioImages[12],
           PortfolioImages[13], PortfolioImages[14], PortfolioImages[15],
-          PortfolioImages[16], PortfolioImages[17], PortfolioImages[18],
-        PortfolioImages[19]]}
+          PortfolioImages[16], PortfolioImages[17]]}
       />
       <Contact />
       <Footer />
