@@ -47,6 +47,9 @@ module.exports = {
       ],
     },
     extend: {
+      maxWidth: {
+        screen: "100vw"
+      },
       boxShadow: {
         menu: "inset 0px 71px 38px -30px rgba(0,0,0, 0.7)",
         gallery: "10px 10px #ffc100",

@@ -6,13 +6,14 @@ import Picture from "../Picture"
 type Splash = {
   image: Image;
   classes?: string,
+  individualImageClasses?: string,
 };
 
-const Splash = ({ image, classes="" }: Splash) => {
+const Splash = ({ image, classes="", individualImageClasses="" }: Splash) => {
 
   return (
     <div className={`h-auto w-full ${classes}`}>
-      <Picture image={image}/>
+      <Picture imageClasses={individualImageClasses} image={image}/>
     </div>
   );
 };
