@@ -1,6 +1,87 @@
 
-export const PortfolioImages = {
-  1: {
+export const PortfolioImages = [
+  {
+    name: "suncoffee/wide",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/wide/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/wide/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/wide/1080p.jpg",
+    mobile: "/portfolio/suncoffee/wide/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/wide/thumbnail.jpg",
+  },
+  {
+    name: "suncoffee/neon",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/neon/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/neon/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/neon/1080p.jpg",
+    mobile: "/portfolio/suncoffee/neon/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/neon/thumbnail.jpg",
+  },
+  {
+    name: "suncoffee/mesa",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/mesa/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/mesa/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/mesa/1080p.jpg",
+    mobile: "/portfolio/suncoffee/mesa/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/mesa/thumbnail.jpg",
+  },
+  {
+    name: "suncoffee/lampadas",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/lampadas/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/lampadas/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/lampadas/1080p.jpg",
+    mobile: "/portfolio/suncoffee/lampadas/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/lampadas/thumbnail.jpg",
+  },
+  {
+    name: "suncoffee/cadeiras",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/cadeiras/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/cadeiras/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/cadeiras/1080p.jpg",
+    mobile: "/portfolio/suncoffee/cadeiras/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/cadeiras/thumbnail.jpg",
+  },
+  {
+    name: "suncoffee/bar",
+    description: "descrição",
+    "2160p": "/portfolio/suncoffee/bar/2160p.jpg",
+    "1440p": "/portfolio/suncoffee/bar/1440p.jpg",
+    "1080p": "/portfolio/suncoffee/bar/1080p.jpg",
+    mobile: "/portfolio/suncoffee/bar/mobile.jpg",
+    "thumbnail": "/portfolio/suncoffee/bar/thumbnail.jpg",
+  },
+    {
+    name: "quartoverde",
+    description: "descrição",
+    "2160p": "/portfolio/quartoverde/2160p.jpg",
+    "1440p": "/portfolio/quartoverde/1440p.jpg",
+    "1080p": "/portfolio/quartoverde/1080p.jpg",
+    mobile: "/portfolio/quartoverde/mobile.jpg",
+    "thumbnail": "/portfolio/quartoverde/thumbnail.jpg",
+  },
+  {
+    name: "hotel",
+    description: "descrição",
+    "2160p": "/portfolio/hotel/2160p.jpg",
+    "1440p": "/portfolio/hotel/1440p.jpg",
+    "1080p": "/portfolio/hotel/1080p.jpg",
+    mobile: "/portfolio/hotel/mobile.jpg",
+    "thumbnail": "/portfolio/hotel/thumbnail.jpg",
+  },
+  {
+    name: "banheiroplantas",
+    description: "descrição",
+    "2160p": "/portfolio/banheiroplantas/2160p.jpg",
+    "1440p": "/portfolio/banheiroplantas/1440p.jpg",
+    "1080p": "/portfolio/banheiroplantas/1080p.jpg",
+    mobile: "/portfolio/banheiroplantas/mobile.jpg",
+    "thumbnail": "/portfolio/banheiroplantas/thumbnail.jpg",
+  },
+  {
     name: "banheiro",
     description: "descrição",
     "2160p": "/portfolio/banheiro/2160p.jpg",
@@ -9,7 +90,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/banheiro/mobile.jpg",
     "thumbnail": "/portfolio/banheiro/thumbnail.jpg",
   },
-  2: {
+  {
     name: "casabranca/anguloalternativo",
     description: "descrição",
     "2160p": "/portfolio/casabranca/anguloalternativo/2160p.jpg",
@@ -18,7 +99,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/casabranca/anguloalternativo/mobile.jpg",
     "thumbnail": "/portfolio/casabranca/anguloalternativo/thumbnail.jpg",
   },
-  3: {
+  {
     name: "casabranca/dia_wide",
     description: "descrição",
     "2160p": "/portfolio/casabranca/dia_wide/2160p.jpg",
@@ -27,7 +108,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/casabranca/dia_wide/mobile.jpg",
     "thumbnail": "/portfolio/casabranca/dia_wide/thumbnail.jpg",
   },
-  4: {
+  {
     name: "casabranca/noite_wide",
     description: "descrição",
     "2160p": "/portfolio/casabranca/noite_wide/2160p.jpg",
@@ -36,7 +117,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/casabranca/noite_wide/mobile.jpg",
     "thumbnail": "/portfolio/casabranca/noite_wide/thumbnail.jpg",
   },
-  5: {
+  {
     name: "cozinha",
     description: "descrição",
     "2160p": "/portfolio/cozinha/2160p.jpg",
@@ -45,7 +126,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/cozinha/mobile.jpg",
     "thumbnail": "/portfolio/cozinha/thumbnail.jpg",
   },
-  6: {
+  {
     name: "piscina/anguloreto",
     description: "descrição",
     "2160p": "/portfolio/piscina/anguloreto/2160p.jpg",
@@ -54,7 +135,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/piscina/anguloreto/mobile.jpg",
     "thumbnail": "/portfolio/piscina/anguloreto/thumbnail.jpg",
   },
-  7: {
+  {
     name: "piscina/beirapiscina",
     description: "descrição",
     "2160p": "/portfolio/piscina/beirapiscina/2160p.jpg",
@@ -63,7 +144,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/piscina/beirapiscina/mobile.jpg",
     "thumbnail": "/portfolio/piscina/beirapiscina/thumbnail.jpg",
   },
-  8: {
+  {
     name: "piscina/deck",
     description: "descrição",
     "2160p": "/portfolio/piscina/deck/2160p.jpg",
@@ -72,7 +153,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/piscina/deck/mobile.jpg",
     "thumbnail": "/portfolio/piscina/deck/thumbnail.jpg",
   },
-  9: {
+  {
     name: "plantas",
     description: "descrição",
     "2160p": "/portfolio/plantas/2160p.jpg",
@@ -81,7 +162,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/plantas/mobile.jpg",
     "thumbnail": "/portfolio/plantas/thumbnail.jpg",
   },
-  10: {
+  {
     name: "quartodark/angulocadeira",
     description: "descrição",
     "2160p": "/portfolio/quartodark/angulocadeira/2160p.jpg",
@@ -90,7 +171,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/quartodark/angulocadeira/mobile.jpg",
     "thumbnail": "/portfolio/quartodark/angulocadeira/thumbnail.jpg",
   },
-  11: {
+  {
     name: "quartodark/anguloquadro",
     description: "descrição",
     "2160p": "/portfolio/quartodark/anguloquadro/2160p.jpg",
@@ -99,7 +180,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/quartodark/anguloquadro/mobile.jpg",
     "thumbnail": "/portfolio/quartodark/anguloquadro/thumbnail.jpg",
   },
-  12: {
+  {
     name: "saladeestar/dia",
     description: "descrição",
     "2160p": "/portfolio/saladeestar/dia/2160p.jpg",
@@ -108,7 +189,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/saladeestar/dia/mobile.jpg",
     "thumbnail": "/portfolio/saladeestar/dia/thumbnail.jpg",
   },
-  13: {
+  {
     name: "saladeestar/noite",
     description: "descrição",
     "2160p": "/portfolio/saladeestar/noite/2160p.jpg",
@@ -117,7 +198,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/saladeestar/noite/mobile.jpg",
     "thumbnail": "/portfolio/saladeestar/noite/thumbnail.jpg",
   },
-  14: {
+  {
     name: "saladeestarjardim/planta",
     description: "descrição",
     "2160p": "/portfolio/saladeestarjardim/planta/2160p.jpg",
@@ -126,7 +207,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/saladeestarjardim/planta/mobile.jpg",
     "thumbnail": "/portfolio/saladeestarjardim/planta/thumbnail.jpg",
   },
-  15: {
+  {
     name: "saladeestarjardim/semplanta",
     description: "descrição",
     "2160p": "/portfolio/saladeestarjardim/semplanta/2160p.jpg",
@@ -135,7 +216,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/saladeestarjardim/semplanta/mobile.jpg",
     "thumbnail": "/portfolio/saladeestarjardim/semplanta/thumbnail.jpg",
   },
-  16: {
+  {
     name: "sobradojardim/cima",
     description: "descrição",
     "2160p": "/portfolio/sobradojardim/cima/2160p.jpg",
@@ -144,7 +225,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/sobradojardim/cima/mobile.jpg",
     "thumbnail": "/portfolio/sobradojardim/cima/thumbnail.jpg",
   },
-  17: {
+  {
     name: "sobradojardim/frente",
     description: "descrição",
     "2160p": "/portfolio/sobradojardim/frente/2160p.jpg",
@@ -153,7 +234,7 @@ export const PortfolioImages = {
     mobile: "/portfolio/sobradojardim/frente/mobile.jpg",
     "thumbnail": "/portfolio/sobradojardim/frente/thumbnail.jpg",
   },
-}
+]
 
 export const AboutPage = {
   title: "o estúdio",

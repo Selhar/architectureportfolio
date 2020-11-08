@@ -23,17 +23,12 @@ export default function IndexPage() {
       <Menu />
       <Section>
         <Carousel
-          images={[PortfolioImages[1], PortfolioImages[2], PortfolioImages[7], PortfolioImages[14]]}
+          images={[PortfolioImages[19], PortfolioImages[11], PortfolioImages[8], PortfolioImages[2]]}
         />
       </Section>
-      <About images={{1:PortfolioImages[8], 2:PortfolioImages[5]}}/>
+      <About images={{1:PortfolioImages[3], 2:PortfolioImages[13]}}/>
       <Portfolio
-        images={[PortfolioImages[1], PortfolioImages[2], PortfolioImages[3],
-          PortfolioImages[4], PortfolioImages[5], PortfolioImages[6],
-          PortfolioImages[7], PortfolioImages[8], PortfolioImages[9],
-          PortfolioImages[10], PortfolioImages[11], PortfolioImages[12],
-          PortfolioImages[13], PortfolioImages[14], PortfolioImages[15],
-          PortfolioImages[16], PortfolioImages[17]]}
+        images={PortfolioImages}
       />
       <Contact />
       <Footer />
