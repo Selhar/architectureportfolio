@@ -1,6 +1,6 @@
 
 export const format = {
-  thumbnail: "/t_thumbnail/",
+  thumbnail: "t_thumbnail/",
   1080: "t_1080p/",
   1440: "t_1440p/",
   0: ""
@@ -9,11 +9,32 @@ export const format = {
 export const buildCloudinaryUrl = ( format: String, name: String, mobile: Boolean  ) => {
   const cloudinaryBaseURL = "https://res.cloudinary.com/selhar/image/upload/";
   const directory = "architecture_portfolio/portfolio/";
-  const imageType = mobile ? "/mobile.jpg" : "/2160p.jpg";
+  const imageType = mobile ? "mobile.jpg" : "2160p.jpg";
   return cloudinaryBaseURL + format + directory + name + imageType;
 }
 
+export const imageoffset = 5;
 export const PortfolioImages = [
+  {
+    name: "lavabo/",
+    description: "descrição",
+  },
+  {
+    name: "quartomeninas/studies/",
+    description: "descrição",
+  },
+  {
+    name: "quartomeninas/cama/",
+    description: "descrição",
+  },
+  {
+    name: "quartomeninas/reto/",
+    description: "descrição",
+  },
+  {
+    name: "quartomeninas/wide/",
+    description: "descrição",
+  },
   {
     name: "suncoffee/wide/",
     description: "descrição",
