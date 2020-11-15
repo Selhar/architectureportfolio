@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Image } from "../utils/types"
-import { PortfolioPage } from "../utils/constants"
+import { PortfolioPage, buildCloudinaryUrl, format } from "../utils/constants"
 import { Title } from "../Title";
 import Gallery from "../Gallery"
 
@@ -12,7 +12,6 @@ type Portfolio = {
 const Portfolio = ({ images }: Portfolio) => {
   const [isFullscreen, setFullscreen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
-  // const pagination = images.length >= 9 ? [[images.slice(0,9)], [images.slice(9,19)]] : "";
 
   useEffect(() => {
     document.body.style.overflowY = isFullscreen ? "hidden" : "visible";
@@ -26,7 +25,7 @@ const Portfolio = ({ images }: Portfolio) => {
         {images.map((image, index) => (
           <img
             key={"portfolio-" + image.name}
-            src={image.thumbnail}
+            src={buildCloudinaryUrl(format["thumbnail"], image.name, false)}
             onClick={() => {
               setFullscreen(true);
               setGalleryIndex(index);
